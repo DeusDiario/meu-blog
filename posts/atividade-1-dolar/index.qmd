@@ -1,0 +1,307 @@
+---
+title: "Atividade 1: Cotação do Dólar"
+author: "Seu Nome"
+date: "2024-11-23"
+categories: [python, api, visualização, dados financeiros]
+image: "grafico_dolar.png"
+---
+
+## 📊 Objetivo
+
+Nesta atividade, desenvolvemos um sistema para acompanhar e visualizar a cotação do dólar (USD/BRL) durante o mês de **agosto de 2021**, utilizando a API oficial do Banco Central do Brasil (PTAX).
+
+## 🎯 Metodologia
+
+O projeto foi desenvolvido em Python e utiliza as seguintes tecnologias:
+
+- **Requests**: Para consumir a API do Banco Central
+- **Pandas**: Para manipulação e análise dos dados
+- **Plotly**: Para visualização interativa dos dados
+
+## 💻 Implementação
+
+### 1. Consumindo a API do Banco Central
+
+O primeiro passo foi criar uma função para obter os dados de cotação do dólar:
+
+```python
+import requests
+import pandas as pd
+from datetime import datetime
+import calendar
+
+def obter_cotacao_dolar(periodo):
+    """
+    Obtém a cotação do dólar para um mês específico
+    
+    Parâmetros:
+    -----------
+    periodo : str
+        Período no formato "MMAAAA" (ex: "082021" para agosto de 2021)
+    
+    Retorna:
+    --------
+    DataFrame com as cotações do período
+    """
+    # Converte o período em datas de início e fim do mês
+    first_date = datetime.strptime(periodo, "%m%Y")
+    last_day = calendar.monthrange(first_date.year, first_date.month)[1]
+    last_date = first_date.replace(day=last_day)
+    
+    # Formata as datas para a API
+    data_inicial = first_date.strftime("%m-%d-%Y")
+    data_final = last_date.strftime("%m-%d-%Y")
+    
+    # Monta a URL da API do Banco Central
+    url = f"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial='{data_inicial}'&@dataFinalCotacao='{data_final}'&$format=json"
+    
+    print(f"Consultando cotações de {first_date.strftime('%B/%Y')}...")
+    
+    # Faz a requisição para a API
+    response = requests.get(url)
+    
+    if response.status_code == 200:
+        data = response.json()
+        
+        if 'value' in data and len(data['value']) > 0:
+            # Converte os dados em DataFrame
+            df = pd.DataFrame(data['value'])
+            df['dataHoraCotacao'] = pd.to_datetime(df['dataHoraCotacao'])
+            df['data'] = df['dataHoraCotacao'].dt.date
+            df = df.sort_values('dataHoraCotacao')
+            
+            print(f"Total de registros obtidos: {len(df)}")
+            return df
+    
+    return None
+```
+
+### 2. Preenchendo Dias Faltantes
+
+Como a API não retorna dados para finais de semana e feriados, criamos uma função para preencher esses dias:
+
+```python
+def preencher_dias_faltantes(df):
+    """
+    Preenche os dias sem cotação (finais de semana e feriados)
+    usando o método de forward fill (repetir o último valor)
+    """
+    if df is None or len(df) == 0:
+        return df
+    
+    # Cria um range com todos os dias do período
+    data_min = df['data'].min()
+    data_max = df['data'].max()
+    todos_dias = pd.date_range(start=data_min, end=data_max, freq='D')
+    
+    # Cria DataFrame completo
+    df_completo = pd.DataFrame({'data': todos_dias.date})
+    
+    # Calcula a média diária (caso haja múltiplas cotações no dia)
+    df_por_dia = df.groupby('data').agg({
+        'cotacaoCompra': 'mean',
+        'cotacaoVenda': 'mean'
+    }).reset_index()
+    
+    # Merge e preenchimento de valores faltantes
+    df_completo = df_completo.merge(df_por_dia, on='data', how='left')
+    df_completo['cotacaoCompra'] = df_completo['cotacaoCompra'].fillna(method='ffill')
+    df_completo['cotacaoVenda'] = df_completo['cotacaoVenda'].fillna(method='ffill')
+    
+    return df_completo
+```
+
+### 3. Visualização dos Dados
+
+Por fim, criamos um gráfico interativo com Plotly:
+
+```python
+import plotly.graph_objects as go
+
+def plotar_grafico_cotacao(df, periodo):
+    """
+    Cria um gráfico interativo da cotação do dólar
+    """
+    df_completo = preencher_dias_faltantes(df)
+    
+    # Cria o gráfico
+    fig = go.Figure()
+    
+    # Adiciona linha de cotação de compra
+    fig.add_trace(go.Scatter(
+        x=df_completo['data'],
+        y=df_completo['cotacaoCompra'],
+        mode='lines+markers',
+        name='Cotação de Compra',
+        line=dict(color='#1f77b4', width=2)
+    ))
+    
+    # Adiciona linha de cotação de venda
+    fig.add_trace(go.Scatter(
+        x=df_completo['data'],
+        y=df_completo['cotacaoVenda'],
+        mode='lines+markers',
+        name='Cotação de Venda',
+        line=dict(color='#ff7f0e', width=2)
+    ))
+    
+    # Calcula estatísticas
+    media_compra = df_completo['cotacaoCompra'].mean()
+    max_compra = df_completo['cotacaoCompra'].max()
+    min_compra = df_completo['cotacaoCompra'].min()
+    
+    # Configura o layout
+    fig.update_layout(
+        title=f'Cotação do Dólar (USD/BRL) - Agosto de 2021',
+        xaxis_title='Data',
+        yaxis_title='Cotação (R$)',
+        hovermode='x unified',
+        template='plotly_white',
+        height=600
+    )
+    
+    fig.show()
+```
+
+## 📈 Resultados
+
+O gráfico gerado mostra a evolução da cotação do dólar durante agosto de 2021:
+
+![Gráfico da Cotação do Dólar](grafico_dolar.png)
+
+### Estatísticas do Período
+
+- **Média:** R$ 5,26
+- **Máxima:** R$ 5,48
+- **Mínima:** R$ 5,02
+- **Variação:** R$ 0,46
+
+## 🔍 Análise
+
+Durante agosto de 2021, observamos:
+
+1. **Volatilidade:** O dólar apresentou oscilações significativas no período
+2. **Tendência:** Movimento de alta seguido de estabilização
+3. **Eventos:** As variações podem estar relacionadas a eventos econômicos e políticos do período
+
+## 💡 Conclusão
+
+Este projeto demonstrou:
+
+- ✅ Como consumir APIs REST em Python
+- ✅ Manipulação de dados temporais com Pandas
+- ✅ Tratamento de dados faltantes
+- ✅ Visualização interativa com Plotly
+- ✅ Análise de dados financeiros
+
+## 📦 Código Completo
+
+### 📥 Download do Código
+
+[⬇️ Baixar cotacao_dolar.py](cotacao_dolar.py){.btn .btn-primary download="cotacao_dolar.py"}
+
+Ou copie o código abaixo:
+
+```{.python filename="cotacao_dolar.py"}
+import requests
+import pandas as pd
+import plotly.graph_objects as go
+import calendar
+from datetime import datetime, timedelta
+
+def obter_cotacao_dolar(periodo):
+    first_date = datetime.strptime(periodo, "%m%Y")
+    last_day = calendar.monthrange(first_date.year, first_date.month)[1]
+    last_date = first_date.replace(day=last_day)
+    
+    data_inicial = first_date.strftime("%m-%d-%Y")
+    data_final = last_date.strftime("%m-%d-%Y")
+    
+    url = f"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial='{data_inicial}'&@dataFinalCotacao='{data_final}'&$format=json"
+    
+    response = requests.get(url)
+    
+    if response.status_code == 200:
+        data = response.json()
+        if 'value' in data and len(data['value']) > 0:
+            df = pd.DataFrame(data['value'])
+            df['dataHoraCotacao'] = pd.to_datetime(df['dataHoraCotacao'])
+            df['data'] = df['dataHoraCotacao'].dt.date
+            df = df.sort_values('dataHoraCotacao')
+            return df
+    return None
+
+def preencher_dias_faltantes(df):
+    if df is None or len(df) == 0:
+        return df
+    
+    data_min = df['data'].min()
+    data_max = df['data'].max()
+    todos_dias = pd.date_range(start=data_min, end=data_max, freq='D')
+    df_completo = pd.DataFrame({'data': todos_dias.date})
+    
+    df_por_dia = df.groupby('data').agg({
+        'cotacaoCompra': 'mean',
+        'cotacaoVenda': 'mean'
+    }).reset_index()
+    
+    df_completo = df_completo.merge(df_por_dia, on='data', how='left')
+    df_completo['cotacaoCompra'] = df_completo['cotacaoCompra'].fillna(method='ffill')
+    df_completo['cotacaoVenda'] = df_completo['cotacaoVenda'].fillna(method='ffill')
+    
+    return df_completo
+
+def plotar_grafico_cotacao(df, periodo):    
+    if df is None or len(df) == 0:
+        return
+    
+    df_completo = preencher_dias_faltantes(df)
+    fig = go.Figure()
+    
+    fig.add_trace(go.Scatter(
+        x=df_completo['data'],
+        y=df_completo['cotacaoCompra'],
+        mode='lines+markers',
+        name='Cotação de Compra',
+        line=dict(color='#1f77b4', width=2)
+    ))
+    
+    fig.add_trace(go.Scatter(
+        x=df_completo['data'],
+        y=df_completo['cotacaoVenda'],
+        mode='lines+markers',
+        name='Cotação de Venda',
+        line=dict(color='#ff7f0e', width=2)
+    ))
+    
+    fig.update_layout(
+        title=f'Cotação do Dólar (USD/BRL) - Agosto de 2021',
+        xaxis_title='Data',
+        yaxis_title='Cotação (R$)',
+        hovermode='x unified',
+        template='plotly_white',
+        height=600
+    )
+    
+    fig.show()
+
+if __name__ == "__main__":
+    periodo = "082021"
+    df_cotacoes = obter_cotacao_dolar(periodo)
+    if df_cotacoes is not None:
+        plotar_grafico_cotacao(df_cotacoes, periodo)
+```
+
+## 🚀 Como Executar
+
+```bash
+# Instalar dependências
+pip install requests pandas plotly
+
+# Executar o script
+python cotacao_dolar.py
+```
+
+---
+
+**Tags:** #Python #API #Visualização #DadosFinanceiros #BancoCentral

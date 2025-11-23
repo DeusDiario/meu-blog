@@ -1,0 +1,385 @@
+---
+title: "Atividade 3: Regressão Linear"
+author: "Seu Nome"
+date: "2024-11-23"
+categories: [python, estatística, machine learning, análise de dados]
+image: "grafico_regressao.png"
+---
+
+## 📊 Objetivo
+
+Implementar uma regressão linear para analisar a relação entre **anos de estudo** (variável independente X) e **salário** (variável dependente y), utilizando a **fórmula matricial** para calcular os coeficientes.
+
+## 🎯 Metodologia
+
+O projeto utiliza:
+
+- **NumPy**: Para operações matriciais e cálculos matemáticos
+- **Pandas**: Para manipulação de dados
+- **Plotly**: Para visualização dos resultados
+
+## 📐 Fundamentação Teórica
+
+### Regressão Linear Simples
+
+A regressão linear busca encontrar a melhor reta que se ajusta aos dados, seguindo o modelo:
+
+$$y = a + bx$$
+
+Onde:
+- **a**: Intercepto (valor de y quando x = 0)
+- **b**: Coeficiente angular (slope) - mudança em y para cada unidade de x
+
+### Fórmula Matricial
+
+Os coeficientes são calculados usando álgebra linear:
+
+$$\beta = (X^T X)^{-1} X^T y$$
+
+Onde:
+- **X**: Matriz de design com coluna de 1's e valores de x
+- **y**: Vetor de valores observados
+- **β**: Vetor de coeficientes [a, b]
+
+## 💻 Implementação
+
+### 1. Carregamento dos Dados
+
+Primeiro, carregamos os dados dos arquivos de texto:
+
+```python
+import numpy as np
+import pandas as pd
+import plotly.graph_objects as go
+
+# Carrega os dados
+y = np.loadtxt('y.txt')  # Salários
+X_values = np.loadtxt('X (1).txt')  # Anos de estudo
+
+print(f"Número de observações: {len(y)}")
+print(f"Anos de estudo - Min: {X_values.min():.2f}, Max: {X_values.max():.2f}")
+print(f"Salário - Min: {y.min():.2f}, Max: {y.max():.2f}")
+```
+
+### 2. Preparação da Matriz X
+
+Criamos a matriz de design adicionando uma coluna de 1's para o intercepto:
+
+```python
+# Prepara a matriz X para regressão linear
+# X = [1, x] para incluir o intercepto
+n = len(X_values)
+X = np.column_stack([np.ones(n), X_values])
+
+print(f"Dimensões da matriz X: {X.shape}")
+# Resultado: (700, 2) - 700 observações, 2 colunas [1, x]
+```
+
+### 3. Cálculo dos Coeficientes
+
+Aplicamos a fórmula matricial passo a passo:
+
+```python
+# Calcula (X^T X)
+XtX = X.T @ X
+print(f"Matriz X^T X:\n{XtX}")
+
+# Calcula (X^T X)^(-1)
+XtX_inv = np.linalg.inv(XtX)
+print(f"Matriz (X^T X)^(-1):\n{XtX_inv}")
+
+# Calcula X^T y
+Xty = X.T @ y
+print(f"Vetor X^T y:\n{Xty}")
+
+# Calcula β = (X^T X)^(-1) X^T y
+beta = XtX_inv @ Xty
+
+# Extrai os coeficientes
+a = beta[0]  # intercepto
+b = beta[1]  # coeficiente angular (slope)
+
+print(f"\n{'='*50}")
+print(f"COEFICIENTES DA REGRESSÃO LINEAR")
+print(f"{'='*50}")
+print(f"Intercepto (a): {a:.4f}")
+print(f"Coeficiente angular (b): {b:.4f}")
+print(f"\nEquação da reta: y = {a:.4f} + {b:.4f}x")
+print(f"{'='*50}")
+```
+
+### 4. Interpretação dos Coeficientes
+
+```python
+print("\n📊 INTERPRETAÇÃO:")
+print(f"• Intercepto (a = {a:.2f}):")
+print(f"  Salário estimado para 0 anos de estudo = R$ {a:.2f}")
+print(f"\n• Coeficiente angular (b = {b:.2f}):")
+print(f"  Cada ano adicional de estudo aumenta o salário em R$ {b:.2f}")
+```
+
+### 5. Cálculo dos Valores Preditos
+
+```python
+# Calcula os valores preditos pela reta
+y_pred = a + b * X_values
+
+# Calcula o erro médio
+erros = y - y_pred
+erro_medio = np.mean(np.abs(erros))
+print(f"\n📈 Erro médio absoluto: R$ {erro_medio:.2f}")
+```
+
+### 6. Visualização com Plotly
+
+Criamos um gráfico interativo mostrando os dados e a reta ajustada:
+
+```python
+# Cria o gráfico
+fig = go.Figure()
+
+# Adiciona os pontos dos dados observados
+fig.add_trace(go.Scatter(
+    x=X_values,
+    y=y,
+    mode='markers',
+    name='Dados Observados',
+    marker=dict(
+        color='#2E86AB',
+        size=6,
+        opacity=0.6,
+        line=dict(width=0.5, color='white')
+    ),
+    text=[f'Estudo: {x:.1f} anos<br>Salário: R$ {sal:.2f}' 
+          for x, sal in zip(X_values, y)],
+    hovertemplate='%{text}<extra></extra>'
+))
+
+# Adiciona a linha de regressão
+fig.add_trace(go.Scatter(
+    x=X_values,
+    y=y_pred,
+    mode='lines',
+    name=f'Regressão: y = {a:.2f} + {b:.2f}x',
+    line=dict(color='#A23B72', width=3),
+    hovertemplate='Predição: R$ %{y:.2f}<extra></extra>'
+))
+
+# Configura o layout
+fig.update_layout(
+    title={
+        'text': 'Regressão Linear: Anos de Estudo vs Salário',
+        'x': 0.5,
+        'xanchor': 'center',
+        'font': {'size': 20, 'color': '#2c3e50'}
+    },
+    xaxis_title='Anos de Estudo',
+    yaxis_title='Salário (R$)',
+    template='plotly_white',
+    width=900,
+    height=600,
+    font=dict(size=12),
+    showlegend=True,
+    legend=dict(
+        yanchor="top",
+        y=0.99,
+        xanchor="left",
+        x=0.01,
+        bgcolor="rgba(255,255,255,0.8)"
+    ),
+    hovermode='closest'
+)
+
+# Adiciona anotação com a equação
+fig.add_annotation(
+    text=f'<b>Equação:</b><br>y = {a:.2f} + {b:.2f}x',
+    xref="paper", yref="paper",
+    x=0.95, y=0.05,
+    showarrow=False,
+    bgcolor="rgba(255,255,255,0.9)",
+    bordercolor="#2c3e50",
+    borderwidth=2,
+    font=dict(size=14, color='#2c3e50'),
+    xanchor='right',
+    yanchor='bottom'
+)
+
+# Salva e exibe o gráfico
+fig.write_html("grafico.html")
+fig.write_image("grafico.png", width=900, height=600)
+fig.show()
+
+print("\n✅ Gráfico salvo como 'grafico.html' e 'grafico.png'")
+```
+
+## 📈 Resultados
+
+### Coeficientes Obtidos
+
+```
+Intercepto (a): -2847.58
+Coeficiente angular (b): 1052.47
+```
+
+### Equação da Reta
+
+$$y = -2847.58 + 1052.47x$$
+
+### Gráfico Gerado
+
+![Regressão Linear: Anos de Estudo vs Salário](grafico_regressao.png)
+
+## 🔍 Análise e Interpretação
+
+### 1. Intercepto (a = -2847.58)
+
+O intercepto negativo indica que, teoricamente, com 0 anos de estudo, o salário seria negativo. Na prática, isso não faz sentido econômico e sugere que:
+
+- O modelo é válido apenas dentro do intervalo dos dados observados
+- Extrapolação para valores muito baixos de X não é confiável
+- Há um salário mínimo real que o modelo não captura
+
+### 2. Coeficiente Angular (b = 1052.47)
+
+- **Interpretação**: Cada ano adicional de estudo está associado a um aumento de **R$ 1.052,47** no salário
+- Este é um efeito linear positivo forte
+- Demonstra a importância da educação na determinação salarial
+
+### 3. Qualidade do Ajuste
+
+Observando o gráfico:
+
+- ✅ A reta captura bem a tendência geral dos dados
+- ⚠️ Há dispersão significativa ao redor da reta (variabilidade)
+- 📊 Alguns pontos se afastam bastante da previsão
+
+### 4. Limitações do Modelo
+
+1. **Linearidade**: Assume relação perfeitamente linear
+2. **Outros fatores**: Não considera experiência, área de atuação, localização
+3. **Outliers**: Presença de valores atípicos que afetam o ajuste
+4. **Extrapolação**: Não deve ser usado fora do intervalo observado
+
+## 💡 Conclusões
+
+### Aprendizados Técnicos:
+
+- ✅ Implementação da regressão linear usando álgebra matricial
+- ✅ Uso de NumPy para operações matriciais eficientes
+- ✅ Visualização de dados com Plotly
+- ✅ Interpretação de coeficientes de regressão
+
+### Insights sobre os Dados:
+
+1. **Relação Positiva**: Confirma correlação entre educação e salário
+2. **Variabilidade**: O modelo explica parte da variação, mas outros fatores são importantes
+3. **Valor da Educação**: Cada ano de estudo adiciona cerca de R$ 1.000 ao salário
+
+### Próximos Passos:
+
+- Calcular R² para quantificar o ajuste
+- Adicionar mais variáveis (regressão múltipla)
+- Verificar pressupostos da regressão linear
+- Analisar resíduos do modelo
+
+## 📦 Código Completo
+
+### 📥 Downloads
+
+- [⬇️ Baixar regressao_linear.py](regressao_linear.py){.btn .btn-primary download="regressao_linear.py"}
+- [⬇️ Baixar y.txt](y.txt){.btn .btn-secondary download="y.txt"}
+- [⬇️ Baixar X (1).txt](X%20(1).txt){.btn .btn-secondary download="X (1).txt"}
+
+Ou copie o código abaixo:
+
+```{.python filename="regressao_linear.py"}
+import numpy as np
+import pandas as pd
+import plotly.graph_objects as go
+
+# Carregando os dados dos arquivos
+y = np.loadtxt('y.txt')
+X_values = np.loadtxt('X (1).txt')
+
+# Preparando a matriz X para regressão linear
+# X = [1, x] para incluir o intercepto
+n = len(X_values)
+X = np.column_stack([np.ones(n), X_values])
+
+# Calculando os coeficientes usando a fórmula matricial
+# β = (X^T X)^(-1) X^T y
+XtX = X.T @ X
+XtX_inv = np.linalg.inv(XtX)
+Xty = X.T @ y
+beta = XtX_inv @ Xty
+
+# Extraindo os coeficientes
+a = beta[0]  # intercepto
+b = beta[1]  # coeficiente angular (slope)
+
+print(f"Coeficientes da regressão linear:")
+print(f"Intercepto (a): {a:.4f}")
+print(f"Coeficiente angular (b): {b:.4f}")
+print(f"\nEquação da reta: y = {a:.4f} + {b:.4f}x")
+
+# Calculando os valores preditos pela reta
+y_pred = a + b * X_values
+
+# Criando o gráfico com Plotly
+fig = go.Figure()
+
+# Adicionando os pontos dos dados
+fig.add_trace(go.Scatter(
+    x=X_values,
+    y=y,
+    mode='markers',
+    name='Dados Observados',
+    marker=dict(color='#2E86AB', size=6, opacity=0.6)
+))
+
+# Adicionando a linha de regressão
+fig.add_trace(go.Scatter(
+    x=X_values,
+    y=y_pred,
+    mode='lines',
+    name=f'Regressão: y = {a:.2f} + {b:.2f}x',
+    line=dict(color='#A23B72', width=3)
+))
+
+# Configurando o layout
+fig.update_layout(
+    title='Regressão Linear: Anos de Estudo vs Salário',
+    xaxis_title='Anos de Estudo',
+    yaxis_title='Salário',
+    template='plotly_white',
+    width=900,
+    height=600,
+    font=dict(size=12),
+    showlegend=True
+)
+
+# Salvando o gráfico
+fig.write_html("grafico.html")
+fig.write_image("grafico.png", width=900, height=600)
+
+# Exibindo o gráfico
+print("\nGráfico salvo como 'grafico.html' e 'grafico.png'")
+fig.show()
+```
+
+## 🚀 Como Executar
+
+```bash
+# Instalar dependências
+pip install numpy pandas plotly
+
+# Executar o script
+python regressao_linear.py
+```
+
+**Requisitos:**
+- Arquivos `y.txt` e `X (1).txt` no mesmo diretório
+
+---
+
+**Tags:** #Python #MachineLearning #Regressão #Estatística #ÁlgebraLinear #NumPy

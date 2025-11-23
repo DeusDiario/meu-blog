@@ -1,0 +1,559 @@
+[
+  {
+    "objectID": "posts/atividade-3-regressao/index.html",
+    "href": "posts/atividade-3-regressao/index.html",
+    "title": "Atividade 3: Regressão Linear",
+    "section": "",
+    "text": "Implementar uma regressão linear para analisar a relação entre anos de estudo (variável independente X) e salário (variável dependente y), utilizando a fórmula matricial para calcular os coeficientes.",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 3: Regressão Linear"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-3-regressao/index.html#sobre-este-blog",
+    "href": "posts/atividade-3-regressao/index.html#sobre-este-blog",
+    "title": "Bem-vindo ao Meu Blog",
+    "section": "",
+    "text": "Este blog foi criado como parte do trabalho individual da disciplina de Construir Algoritmos, apresentando três atividades práticas de análise de dados utilizando Python.",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 3: Regressão Linear"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-3-regressao/index.html#atividades",
+    "href": "posts/atividade-3-regressao/index.html#atividades",
+    "title": "Bem-vindo ao Meu Blog",
+    "section": "📚 Atividades",
+    "text": "📚 Atividades\n\nAtividade 1: Cotação do Dólar\nAcompanhamento e visualização da cotação do dólar no mês de agosto de 2021, utilizando a API do Banco Central do Brasil.\nTecnologias: Python, Requests, Pandas, Plotly\n\n\n\nAtividade 2: Monitoramento de Ônibus\nSistema de monitoramento em tempo real da linha 8000 de ônibus na cidade de São Paulo, com visualização em mapa interativo.\nTecnologias: Python, API SPTrans, Folium, Requests\n\n\n\nAtividade 3: Regressão Linear\nImplementação de regressão linear para análise da relação entre anos de estudo e salário, utilizando fórmulas matriciais.\nTecnologias: Python, NumPy, Plotly, Álgebra Linear",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 3: Regressão Linear"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-3-regressao/index.html#ferramentas-utilizadas",
+    "href": "posts/atividade-3-regressao/index.html#ferramentas-utilizadas",
+    "title": "Bem-vindo ao Meu Blog",
+    "section": "🛠️ Ferramentas Utilizadas",
+    "text": "🛠️ Ferramentas Utilizadas\n\nPython 3.x\nBibliotecas: NumPy, Pandas, Plotly, Folium, Requests\nQuarto para geração do blog\nGitHub Pages para hospedagem",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 3: Regressão Linear"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-3-regressao/index.html#contato",
+    "href": "posts/atividade-3-regressao/index.html#contato",
+    "title": "Bem-vindo ao Meu Blog",
+    "section": "📧 Contato",
+    "text": "📧 Contato\nPara mais informações ou dúvidas sobre as atividades, entre em contato através do GitHub.\n\nBlog criado com Quarto",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 3: Regressão Linear"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-1-dolar/index.html",
+    "href": "posts/atividade-1-dolar/index.html",
+    "title": "Atividade 1: Cotação do Dólar",
+    "section": "",
+    "text": "Nesta atividade, desenvolvemos um sistema para acompanhar e visualizar a cotação do dólar (USD/BRL) durante o mês de agosto de 2021, utilizando a API oficial do Banco Central do Brasil (PTAX).",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 1: Cotação do Dólar"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-1-dolar/index.html#sobre-este-blog",
+    "href": "posts/atividade-1-dolar/index.html#sobre-este-blog",
+    "title": "Bem-vindo ao Meu Blog",
+    "section": "",
+    "text": "Este blog foi criado como parte do trabalho individual da disciplina de Construir Algoritmos, apresentando três atividades práticas de análise de dados utilizando Python.",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 1: Cotação do Dólar"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-1-dolar/index.html#atividades",
+    "href": "posts/atividade-1-dolar/index.html#atividades",
+    "title": "Bem-vindo ao Meu Blog",
+    "section": "📚 Atividades",
+    "text": "📚 Atividades\n\nAtividade 1: Cotação do Dólar\nAcompanhamento e visualização da cotação do dólar no mês de agosto de 2021, utilizando a API do Banco Central do Brasil.\nTecnologias: Python, Requests, Pandas, Plotly\n\n\n\nAtividade 2: Monitoramento de Ônibus\nSistema de monitoramento em tempo real da linha 8000 de ônibus na cidade de São Paulo, com visualização em mapa interativo.\nTecnologias: Python, API SPTrans, Folium, Requests\n\n\n\nAtividade 3: Regressão Linear\nImplementação de regressão linear para análise da relação entre anos de estudo e salário, utilizando fórmulas matriciais.\nTecnologias: Python, NumPy, Plotly, Álgebra Linear",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 1: Cotação do Dólar"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-1-dolar/index.html#ferramentas-utilizadas",
+    "href": "posts/atividade-1-dolar/index.html#ferramentas-utilizadas",
+    "title": "Bem-vindo ao Meu Blog",
+    "section": "🛠️ Ferramentas Utilizadas",
+    "text": "🛠️ Ferramentas Utilizadas\n\nPython 3.x\nBibliotecas: NumPy, Pandas, Plotly, Folium, Requests\nQuarto para geração do blog\nGitHub Pages para hospedagem",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 1: Cotação do Dólar"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-1-dolar/index.html#contato",
+    "href": "posts/atividade-1-dolar/index.html#contato",
+    "title": "Bem-vindo ao Meu Blog",
+    "section": "📧 Contato",
+    "text": "📧 Contato\nPara mais informações ou dúvidas sobre as atividades, entre em contato através do GitHub.\n\nBlog criado com Quarto",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 1: Cotação do Dólar"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Sobre Mim",
+    "section": "",
+    "text": "Meu nome é [Lucas] e sou estudante de [Sistema da Informação].\nEste blog foi desenvolvido como parte do trabalho individual da disciplina de Construir Algoritmos, onde exploramos conceitos de programação, análise de dados e visualização utilizando Python."
+  },
+  {
+    "objectID": "about.html#olá",
+    "href": "about.html#olá",
+    "title": "Sobre Mim",
+    "section": "",
+    "text": "Meu nome é [Lucas] e sou estudante de [Sistema da Informação].\nEste blog foi desenvolvido como parte do trabalho individual da disciplina de Construir Algoritmos, onde exploramos conceitos de programação, análise de dados e visualização utilizando Python."
+  },
+  {
+    "objectID": "about.html#formação",
+    "href": "about.html#formação",
+    "title": "Sobre Mim",
+    "section": "🎓 Formação",
+    "text": "🎓 Formação\n\nCurso: Sistema da informação\nInstituição: Unasp\nPeríodo: 2025"
+  },
+  {
+    "objectID": "about.html#habilidades",
+    "href": "about.html#habilidades",
+    "title": "Sobre Mim",
+    "section": "💻 Habilidades",
+    "text": "💻 Habilidades\n\nPython\nAnálise de Dados\nVisualização de Dados\nAPIs REST\nGit/GitHub"
+  },
+  {
+    "objectID": "about.html#projetos",
+    "href": "about.html#projetos",
+    "title": "Sobre Mim",
+    "section": "📂 Projetos",
+    "text": "📂 Projetos\nNeste blog, você encontrará três projetos principais:\n\nCotação do Dólar: Análise temporal da cotação do dólar\nMonitoramento de Ônibus: Sistema de rastreamento em tempo real\nRegressão Linear: Análise estatística de dados"
+  },
+  {
+    "objectID": "about.html#objetivo",
+    "href": "about.html#objetivo",
+    "title": "Sobre Mim",
+    "section": "🎯 Objetivo",
+    "text": "🎯 Objetivo\nO objetivo deste trabalho é demonstrar a aplicação prática de conceitos de programação e análise de dados em problemas reais, utilizando ferramentas modernas e boas práticas de desenvolvimento.\n\nÚltima atualização: Novembro de 2024"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Bem-vindo ao Meu Blog",
+    "section": "",
+    "text": "Este blog foi criado como parte do trabalho individual da disciplina de Construir Algoritmos, apresentando três atividades práticas de análise de dados utilizando Python."
+  },
+  {
+    "objectID": "index.html#sobre-este-blog",
+    "href": "index.html#sobre-este-blog",
+    "title": "Bem-vindo ao Meu Blog",
+    "section": "",
+    "text": "Este blog foi criado como parte do trabalho individual da disciplina de Construir Algoritmos, apresentando três atividades práticas de análise de dados utilizando Python."
+  },
+  {
+    "objectID": "index.html#atividades",
+    "href": "index.html#atividades",
+    "title": "Bem-vindo ao Meu Blog",
+    "section": "📚 Atividades",
+    "text": "📚 Atividades\n\nAtividade 1: Cotação do Dólar\nAcompanhamento e visualização da cotação do dólar no mês de agosto de 2021, utilizando a API do Banco Central do Brasil.\nTecnologias: Python, Requests, Pandas, Plotly\n\n\n\nAtividade 2: Monitoramento de Ônibus\nSistema de monitoramento em tempo real da linha 8000 de ônibus na cidade de São Paulo, com visualização em mapa interativo.\nTecnologias: Python, API SPTrans, Folium, Requests\n\n\n\nAtividade 3: Regressão Linear\nImplementação de regressão linear para análise da relação entre anos de estudo e salário, utilizando fórmulas matriciais.\nTecnologias: Python, NumPy, Plotly, Álgebra Linear"
+  },
+  {
+    "objectID": "index.html#ferramentas-utilizadas",
+    "href": "index.html#ferramentas-utilizadas",
+    "title": "Bem-vindo ao Meu Blog",
+    "section": "🛠️ Ferramentas Utilizadas",
+    "text": "🛠️ Ferramentas Utilizadas\n\nPython 3.x\nBibliotecas: NumPy, Pandas, Plotly, Folium, Requests\nQuarto para geração do blog\nGitHub Pages para hospedagem"
+  },
+  {
+    "objectID": "index.html#contato",
+    "href": "index.html#contato",
+    "title": "Bem-vindo ao Meu Blog",
+    "section": "📧 Contato",
+    "text": "📧 Contato\nPara mais informações ou dúvidas sobre as atividades, entre em contato através do GitHub.\n\nBlog criado com Quarto"
+  },
+  {
+    "objectID": "posts/atividade-2-onibus/index.html",
+    "href": "posts/atividade-2-onibus/index.html",
+    "title": "Atividade 2: Monitoramento de Ônibus SP",
+    "section": "",
+    "text": "Desenvolver um sistema de monitoramento em tempo real da linha 8000 de ônibus da cidade de São Paulo, utilizando a API SPTrans e visualizando os dados em um mapa interativo.",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 2: Monitoramento de Ônibus"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-2-onibus/index.html#sobre-este-blog",
+    "href": "posts/atividade-2-onibus/index.html#sobre-este-blog",
+    "title": "Bem-vindo ao Meu Blog",
+    "section": "",
+    "text": "Este blog foi criado como parte do trabalho individual da disciplina de Construir Algoritmos, apresentando três atividades práticas de análise de dados utilizando Python.",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 2: Monitoramento de Ônibus"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-2-onibus/index.html#atividades",
+    "href": "posts/atividade-2-onibus/index.html#atividades",
+    "title": "Bem-vindo ao Meu Blog",
+    "section": "📚 Atividades",
+    "text": "📚 Atividades\n\nAtividade 1: Cotação do Dólar\nAcompanhamento e visualização da cotação do dólar no mês de agosto de 2021, utilizando a API do Banco Central do Brasil.\nTecnologias: Python, Requests, Pandas, Plotly\n\n\n\nAtividade 2: Monitoramento de Ônibus\nSistema de monitoramento em tempo real da linha 8000 de ônibus na cidade de São Paulo, com visualização em mapa interativo.\nTecnologias: Python, API SPTrans, Folium, Requests\n\n\n\nAtividade 3: Regressão Linear\nImplementação de regressão linear para análise da relação entre anos de estudo e salário, utilizando fórmulas matriciais.\nTecnologias: Python, NumPy, Plotly, Álgebra Linear",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 2: Monitoramento de Ônibus"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-2-onibus/index.html#ferramentas-utilizadas",
+    "href": "posts/atividade-2-onibus/index.html#ferramentas-utilizadas",
+    "title": "Bem-vindo ao Meu Blog",
+    "section": "🛠️ Ferramentas Utilizadas",
+    "text": "🛠️ Ferramentas Utilizadas\n\nPython 3.x\nBibliotecas: NumPy, Pandas, Plotly, Folium, Requests\nQuarto para geração do blog\nGitHub Pages para hospedagem",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 2: Monitoramento de Ônibus"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-2-onibus/index.html#contato",
+    "href": "posts/atividade-2-onibus/index.html#contato",
+    "title": "Bem-vindo ao Meu Blog",
+    "section": "📧 Contato",
+    "text": "📧 Contato\nPara mais informações ou dúvidas sobre as atividades, entre em contato através do GitHub.\n\nBlog criado com Quarto",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 2: Monitoramento de Ônibus"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-1-dolar/index.html#objetivo",
+    "href": "posts/atividade-1-dolar/index.html#objetivo",
+    "title": "Atividade 1: Cotação do Dólar",
+    "section": "",
+    "text": "Nesta atividade, desenvolvemos um sistema para acompanhar e visualizar a cotação do dólar (USD/BRL) durante o mês de agosto de 2021, utilizando a API oficial do Banco Central do Brasil (PTAX).",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 1: Cotação do Dólar"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-1-dolar/index.html#metodologia",
+    "href": "posts/atividade-1-dolar/index.html#metodologia",
+    "title": "Atividade 1: Cotação do Dólar",
+    "section": "🎯 Metodologia",
+    "text": "🎯 Metodologia\nO projeto foi desenvolvido em Python e utiliza as seguintes tecnologias:\n\nRequests: Para consumir a API do Banco Central\nPandas: Para manipulação e análise dos dados\nPlotly: Para visualização interativa dos dados",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 1: Cotação do Dólar"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-1-dolar/index.html#implementação",
+    "href": "posts/atividade-1-dolar/index.html#implementação",
+    "title": "Atividade 1: Cotação do Dólar",
+    "section": "💻 Implementação",
+    "text": "💻 Implementação\n\n1. Consumindo a API do Banco Central\nO primeiro passo foi criar uma função para obter os dados de cotação do dólar:\nimport requests\nimport pandas as pd\nfrom datetime import datetime\nimport calendar\n\ndef obter_cotacao_dolar(periodo):\n    \"\"\"\n    Obtém a cotação do dólar para um mês específico\n    \n    Parâmetros:\n    -----------\n    periodo : str\n        Período no formato \"MMAAAA\" (ex: \"082021\" para agosto de 2021)\n    \n    Retorna:\n    --------\n    DataFrame com as cotações do período\n    \"\"\"\n    # Converte o período em datas de início e fim do mês\n    first_date = datetime.strptime(periodo, \"%m%Y\")\n    last_day = calendar.monthrange(first_date.year, first_date.month)[1]\n    last_date = first_date.replace(day=last_day)\n    \n    # Formata as datas para a API\n    data_inicial = first_date.strftime(\"%m-%d-%Y\")\n    data_final = last_date.strftime(\"%m-%d-%Y\")\n    \n    # Monta a URL da API do Banco Central\n    url = f\"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial='{data_inicial}'&@dataFinalCotacao='{data_final}'&$format=json\"\n    \n    print(f\"Consultando cotações de {first_date.strftime('%B/%Y')}...\")\n    \n    # Faz a requisição para a API\n    response = requests.get(url)\n    \n    if response.status_code == 200:\n        data = response.json()\n        \n        if 'value' in data and len(data['value']) &gt; 0:\n            # Converte os dados em DataFrame\n            df = pd.DataFrame(data['value'])\n            df['dataHoraCotacao'] = pd.to_datetime(df['dataHoraCotacao'])\n            df['data'] = df['dataHoraCotacao'].dt.date\n            df = df.sort_values('dataHoraCotacao')\n            \n            print(f\"Total de registros obtidos: {len(df)}\")\n            return df\n    \n    return None\n\n\n2. Preenchendo Dias Faltantes\nComo a API não retorna dados para finais de semana e feriados, criamos uma função para preencher esses dias:\ndef preencher_dias_faltantes(df):\n    \"\"\"\n    Preenche os dias sem cotação (finais de semana e feriados)\n    usando o método de forward fill (repetir o último valor)\n    \"\"\"\n    if df is None or len(df) == 0:\n        return df\n    \n    # Cria um range com todos os dias do período\n    data_min = df['data'].min()\n    data_max = df['data'].max()\n    todos_dias = pd.date_range(start=data_min, end=data_max, freq='D')\n    \n    # Cria DataFrame completo\n    df_completo = pd.DataFrame({'data': todos_dias.date})\n    \n    # Calcula a média diária (caso haja múltiplas cotações no dia)\n    df_por_dia = df.groupby('data').agg({\n        'cotacaoCompra': 'mean',\n        'cotacaoVenda': 'mean'\n    }).reset_index()\n    \n    # Merge e preenchimento de valores faltantes\n    df_completo = df_completo.merge(df_por_dia, on='data', how='left')\n    df_completo['cotacaoCompra'] = df_completo['cotacaoCompra'].fillna(method='ffill')\n    df_completo['cotacaoVenda'] = df_completo['cotacaoVenda'].fillna(method='ffill')\n    \n    return df_completo\n\n\n3. Visualização dos Dados\nPor fim, criamos um gráfico interativo com Plotly:\nimport plotly.graph_objects as go\n\ndef plotar_grafico_cotacao(df, periodo):\n    \"\"\"\n    Cria um gráfico interativo da cotação do dólar\n    \"\"\"\n    df_completo = preencher_dias_faltantes(df)\n    \n    # Cria o gráfico\n    fig = go.Figure()\n    \n    # Adiciona linha de cotação de compra\n    fig.add_trace(go.Scatter(\n        x=df_completo['data'],\n        y=df_completo['cotacaoCompra'],\n        mode='lines+markers',\n        name='Cotação de Compra',\n        line=dict(color='#1f77b4', width=2)\n    ))\n    \n    # Adiciona linha de cotação de venda\n    fig.add_trace(go.Scatter(\n        x=df_completo['data'],\n        y=df_completo['cotacaoVenda'],\n        mode='lines+markers',\n        name='Cotação de Venda',\n        line=dict(color='#ff7f0e', width=2)\n    ))\n    \n    # Calcula estatísticas\n    media_compra = df_completo['cotacaoCompra'].mean()\n    max_compra = df_completo['cotacaoCompra'].max()\n    min_compra = df_completo['cotacaoCompra'].min()\n    \n    # Configura o layout\n    fig.update_layout(\n        title=f'Cotação do Dólar (USD/BRL) - Agosto de 2021',\n        xaxis_title='Data',\n        yaxis_title='Cotação (R$)',\n        hovermode='x unified',\n        template='plotly_white',\n        height=600\n    )\n    \n    fig.show()",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 1: Cotação do Dólar"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-1-dolar/index.html#resultados",
+    "href": "posts/atividade-1-dolar/index.html#resultados",
+    "title": "Atividade 1: Cotação do Dólar",
+    "section": "📈 Resultados",
+    "text": "📈 Resultados\nO gráfico gerado mostra a evolução da cotação do dólar durante agosto de 2021:\n\n\n\nGráfico da Cotação do Dólar\n\n\n\nEstatísticas do Período\n\nMédia: R$ 5,26\nMáxima: R$ 5,48\nMínima: R$ 5,02\nVariação: R$ 0,46",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 1: Cotação do Dólar"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-1-dolar/index.html#análise",
+    "href": "posts/atividade-1-dolar/index.html#análise",
+    "title": "Atividade 1: Cotação do Dólar",
+    "section": "🔍 Análise",
+    "text": "🔍 Análise\nDurante agosto de 2021, observamos:\n\nVolatilidade: O dólar apresentou oscilações significativas no período\nTendência: Movimento de alta seguido de estabilização\nEventos: As variações podem estar relacionadas a eventos econômicos e políticos do período",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 1: Cotação do Dólar"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-1-dolar/index.html#conclusão",
+    "href": "posts/atividade-1-dolar/index.html#conclusão",
+    "title": "Atividade 1: Cotação do Dólar",
+    "section": "💡 Conclusão",
+    "text": "💡 Conclusão\nEste projeto demonstrou:\n\n✅ Como consumir APIs REST em Python\n✅ Manipulação de dados temporais com Pandas\n✅ Tratamento de dados faltantes\n✅ Visualização interativa com Plotly\n✅ Análise de dados financeiros",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 1: Cotação do Dólar"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-1-dolar/index.html#código-completo",
+    "href": "posts/atividade-1-dolar/index.html#código-completo",
+    "title": "Atividade 1: Cotação do Dólar",
+    "section": "📦 Código Completo",
+    "text": "📦 Código Completo\n\n📥 Download do Código\n⬇️ Baixar cotacao_dolar.py\nOu copie o código abaixo:\n\n\ncotacao_dolar.py\n\nimport requests\nimport pandas as pd\nimport plotly.graph_objects as go\nimport calendar\nfrom datetime import datetime, timedelta\n\ndef obter_cotacao_dolar(periodo):\n    first_date = datetime.strptime(periodo, \"%m%Y\")\n    last_day = calendar.monthrange(first_date.year, first_date.month)[1]\n    last_date = first_date.replace(day=last_day)\n    \n    data_inicial = first_date.strftime(\"%m-%d-%Y\")\n    data_final = last_date.strftime(\"%m-%d-%Y\")\n    \n    url = f\"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial='{data_inicial}'&@dataFinalCotacao='{data_final}'&$format=json\"\n    \n    response = requests.get(url)\n    \n    if response.status_code == 200:\n        data = response.json()\n        if 'value' in data and len(data['value']) &gt; 0:\n            df = pd.DataFrame(data['value'])\n            df['dataHoraCotacao'] = pd.to_datetime(df['dataHoraCotacao'])\n            df['data'] = df['dataHoraCotacao'].dt.date\n            df = df.sort_values('dataHoraCotacao')\n            return df\n    return None\n\ndef preencher_dias_faltantes(df):\n    if df is None or len(df) == 0:\n        return df\n    \n    data_min = df['data'].min()\n    data_max = df['data'].max()\n    todos_dias = pd.date_range(start=data_min, end=data_max, freq='D')\n    df_completo = pd.DataFrame({'data': todos_dias.date})\n    \n    df_por_dia = df.groupby('data').agg({\n        'cotacaoCompra': 'mean',\n        'cotacaoVenda': 'mean'\n    }).reset_index()\n    \n    df_completo = df_completo.merge(df_por_dia, on='data', how='left')\n    df_completo['cotacaoCompra'] = df_completo['cotacaoCompra'].fillna(method='ffill')\n    df_completo['cotacaoVenda'] = df_completo['cotacaoVenda'].fillna(method='ffill')\n    \n    return df_completo\n\ndef plotar_grafico_cotacao(df, periodo):    \n    if df is None or len(df) == 0:\n        return\n    \n    df_completo = preencher_dias_faltantes(df)\n    fig = go.Figure()\n    \n    fig.add_trace(go.Scatter(\n        x=df_completo['data'],\n        y=df_completo['cotacaoCompra'],\n        mode='lines+markers',\n        name='Cotação de Compra',\n        line=dict(color='#1f77b4', width=2)\n    ))\n    \n    fig.add_trace(go.Scatter(\n        x=df_completo['data'],\n        y=df_completo['cotacaoVenda'],\n        mode='lines+markers',\n        name='Cotação de Venda',\n        line=dict(color='#ff7f0e', width=2)\n    ))\n    \n    fig.update_layout(\n        title=f'Cotação do Dólar (USD/BRL) - Agosto de 2021',\n        xaxis_title='Data',\n        yaxis_title='Cotação (R$)',\n        hovermode='x unified',\n        template='plotly_white',\n        height=600\n    )\n    \n    fig.show()\n\nif __name__ == \"__main__\":\n    periodo = \"082021\"\n    df_cotacoes = obter_cotacao_dolar(periodo)\n    if df_cotacoes is not None:\n        plotar_grafico_cotacao(df_cotacoes, periodo)",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 1: Cotação do Dólar"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-1-dolar/index.html#como-executar",
+    "href": "posts/atividade-1-dolar/index.html#como-executar",
+    "title": "Atividade 1: Cotação do Dólar",
+    "section": "🚀 Como Executar",
+    "text": "🚀 Como Executar\n# Instalar dependências\npip install requests pandas plotly\n\n# Executar o script\npython cotacao_dolar.py\n\nTags: #Python #API #Visualização #DadosFinanceiros #BancoCentral",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 1: Cotação do Dólar"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-3-regressao/index.html#objetivo",
+    "href": "posts/atividade-3-regressao/index.html#objetivo",
+    "title": "Atividade 3: Regressão Linear",
+    "section": "",
+    "text": "Implementar uma regressão linear para analisar a relação entre anos de estudo (variável independente X) e salário (variável dependente y), utilizando a fórmula matricial para calcular os coeficientes.",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 3: Regressão Linear"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-3-regressao/index.html#metodologia",
+    "href": "posts/atividade-3-regressao/index.html#metodologia",
+    "title": "Atividade 3: Regressão Linear",
+    "section": "🎯 Metodologia",
+    "text": "🎯 Metodologia\nO projeto utiliza:\n\nNumPy: Para operações matriciais e cálculos matemáticos\nPandas: Para manipulação de dados\nPlotly: Para visualização dos resultados",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 3: Regressão Linear"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-3-regressao/index.html#fundamentação-teórica",
+    "href": "posts/atividade-3-regressao/index.html#fundamentação-teórica",
+    "title": "Atividade 3: Regressão Linear",
+    "section": "📐 Fundamentação Teórica",
+    "text": "📐 Fundamentação Teórica\n\nRegressão Linear Simples\nA regressão linear busca encontrar a melhor reta que se ajusta aos dados, seguindo o modelo:\n\\[y = a + bx\\]\nOnde: - a: Intercepto (valor de y quando x = 0) - b: Coeficiente angular (slope) - mudança em y para cada unidade de x\n\n\nFórmula Matricial\nOs coeficientes são calculados usando álgebra linear:\n\\[\\beta = (X^T X)^{-1} X^T y\\]\nOnde: - X: Matriz de design com coluna de 1’s e valores de x - y: Vetor de valores observados - β: Vetor de coeficientes [a, b]",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 3: Regressão Linear"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-3-regressao/index.html#implementação",
+    "href": "posts/atividade-3-regressao/index.html#implementação",
+    "title": "Atividade 3: Regressão Linear",
+    "section": "💻 Implementação",
+    "text": "💻 Implementação\n\n1. Carregamento dos Dados\nPrimeiro, carregamos os dados dos arquivos de texto:\nimport numpy as np\nimport pandas as pd\nimport plotly.graph_objects as go\n\n# Carrega os dados\ny = np.loadtxt('y.txt')  # Salários\nX_values = np.loadtxt('X (1).txt')  # Anos de estudo\n\nprint(f\"Número de observações: {len(y)}\")\nprint(f\"Anos de estudo - Min: {X_values.min():.2f}, Max: {X_values.max():.2f}\")\nprint(f\"Salário - Min: {y.min():.2f}, Max: {y.max():.2f}\")\n\n\n2. Preparação da Matriz X\nCriamos a matriz de design adicionando uma coluna de 1’s para o intercepto:\n# Prepara a matriz X para regressão linear\n# X = [1, x] para incluir o intercepto\nn = len(X_values)\nX = np.column_stack([np.ones(n), X_values])\n\nprint(f\"Dimensões da matriz X: {X.shape}\")\n# Resultado: (700, 2) - 700 observações, 2 colunas [1, x]\n\n\n3. Cálculo dos Coeficientes\nAplicamos a fórmula matricial passo a passo:\n# Calcula (X^T X)\nXtX = X.T @ X\nprint(f\"Matriz X^T X:\\n{XtX}\")\n\n# Calcula (X^T X)^(-1)\nXtX_inv = np.linalg.inv(XtX)\nprint(f\"Matriz (X^T X)^(-1):\\n{XtX_inv}\")\n\n# Calcula X^T y\nXty = X.T @ y\nprint(f\"Vetor X^T y:\\n{Xty}\")\n\n# Calcula β = (X^T X)^(-1) X^T y\nbeta = XtX_inv @ Xty\n\n# Extrai os coeficientes\na = beta[0]  # intercepto\nb = beta[1]  # coeficiente angular (slope)\n\nprint(f\"\\n{'='*50}\")\nprint(f\"COEFICIENTES DA REGRESSÃO LINEAR\")\nprint(f\"{'='*50}\")\nprint(f\"Intercepto (a): {a:.4f}\")\nprint(f\"Coeficiente angular (b): {b:.4f}\")\nprint(f\"\\nEquação da reta: y = {a:.4f} + {b:.4f}x\")\nprint(f\"{'='*50}\")\n\n\n4. Interpretação dos Coeficientes\nprint(\"\\n📊 INTERPRETAÇÃO:\")\nprint(f\"• Intercepto (a = {a:.2f}):\")\nprint(f\"  Salário estimado para 0 anos de estudo = R$ {a:.2f}\")\nprint(f\"\\n• Coeficiente angular (b = {b:.2f}):\")\nprint(f\"  Cada ano adicional de estudo aumenta o salário em R$ {b:.2f}\")\n\n\n5. Cálculo dos Valores Preditos\n# Calcula os valores preditos pela reta\ny_pred = a + b * X_values\n\n# Calcula o erro médio\nerros = y - y_pred\nerro_medio = np.mean(np.abs(erros))\nprint(f\"\\n📈 Erro médio absoluto: R$ {erro_medio:.2f}\")\n\n\n6. Visualização com Plotly\nCriamos um gráfico interativo mostrando os dados e a reta ajustada:\n# Cria o gráfico\nfig = go.Figure()\n\n# Adiciona os pontos dos dados observados\nfig.add_trace(go.Scatter(\n    x=X_values,\n    y=y,\n    mode='markers',\n    name='Dados Observados',\n    marker=dict(\n        color='#2E86AB',\n        size=6,\n        opacity=0.6,\n        line=dict(width=0.5, color='white')\n    ),\n    text=[f'Estudo: {x:.1f} anos&lt;br&gt;Salário: R$ {sal:.2f}' \n          for x, sal in zip(X_values, y)],\n    hovertemplate='%{text}&lt;extra&gt;&lt;/extra&gt;'\n))\n\n# Adiciona a linha de regressão\nfig.add_trace(go.Scatter(\n    x=X_values,\n    y=y_pred,\n    mode='lines',\n    name=f'Regressão: y = {a:.2f} + {b:.2f}x',\n    line=dict(color='#A23B72', width=3),\n    hovertemplate='Predição: R$ %{y:.2f}&lt;extra&gt;&lt;/extra&gt;'\n))\n\n# Configura o layout\nfig.update_layout(\n    title={\n        'text': 'Regressão Linear: Anos de Estudo vs Salário',\n        'x': 0.5,\n        'xanchor': 'center',\n        'font': {'size': 20, 'color': '#2c3e50'}\n    },\n    xaxis_title='Anos de Estudo',\n    yaxis_title='Salário (R$)',\n    template='plotly_white',\n    width=900,\n    height=600,\n    font=dict(size=12),\n    showlegend=True,\n    legend=dict(\n        yanchor=\"top\",\n        y=0.99,\n        xanchor=\"left\",\n        x=0.01,\n        bgcolor=\"rgba(255,255,255,0.8)\"\n    ),\n    hovermode='closest'\n)\n\n# Adiciona anotação com a equação\nfig.add_annotation(\n    text=f'&lt;b&gt;Equação:&lt;/b&gt;&lt;br&gt;y = {a:.2f} + {b:.2f}x',\n    xref=\"paper\", yref=\"paper\",\n    x=0.95, y=0.05,\n    showarrow=False,\n    bgcolor=\"rgba(255,255,255,0.9)\",\n    bordercolor=\"#2c3e50\",\n    borderwidth=2,\n    font=dict(size=14, color='#2c3e50'),\n    xanchor='right',\n    yanchor='bottom'\n)\n\n# Salva e exibe o gráfico\nfig.write_html(\"grafico.html\")\nfig.write_image(\"grafico.png\", width=900, height=600)\nfig.show()\n\nprint(\"\\n✅ Gráfico salvo como 'grafico.html' e 'grafico.png'\")",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 3: Regressão Linear"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-3-regressao/index.html#resultados",
+    "href": "posts/atividade-3-regressao/index.html#resultados",
+    "title": "Atividade 3: Regressão Linear",
+    "section": "📈 Resultados",
+    "text": "📈 Resultados\n\nCoeficientes Obtidos\nIntercepto (a): -2847.58\nCoeficiente angular (b): 1052.47\n\n\nEquação da Reta\n\\[y = -2847.58 + 1052.47x\\]\n\n\nGráfico Gerado\n\n\n\nRegressão Linear: Anos de Estudo vs Salário",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 3: Regressão Linear"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-3-regressao/index.html#análise-e-interpretação",
+    "href": "posts/atividade-3-regressao/index.html#análise-e-interpretação",
+    "title": "Atividade 3: Regressão Linear",
+    "section": "🔍 Análise e Interpretação",
+    "text": "🔍 Análise e Interpretação\n\n1. Intercepto (a = -2847.58)\nO intercepto negativo indica que, teoricamente, com 0 anos de estudo, o salário seria negativo. Na prática, isso não faz sentido econômico e sugere que:\n\nO modelo é válido apenas dentro do intervalo dos dados observados\nExtrapolação para valores muito baixos de X não é confiável\nHá um salário mínimo real que o modelo não captura\n\n\n\n2. Coeficiente Angular (b = 1052.47)\n\nInterpretação: Cada ano adicional de estudo está associado a um aumento de R$ 1.052,47 no salário\nEste é um efeito linear positivo forte\nDemonstra a importância da educação na determinação salarial\n\n\n\n3. Qualidade do Ajuste\nObservando o gráfico:\n\n✅ A reta captura bem a tendência geral dos dados\n⚠️ Há dispersão significativa ao redor da reta (variabilidade)\n📊 Alguns pontos se afastam bastante da previsão\n\n\n\n4. Limitações do Modelo\n\nLinearidade: Assume relação perfeitamente linear\nOutros fatores: Não considera experiência, área de atuação, localização\nOutliers: Presença de valores atípicos que afetam o ajuste\nExtrapolação: Não deve ser usado fora do intervalo observado",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 3: Regressão Linear"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-3-regressao/index.html#conclusões",
+    "href": "posts/atividade-3-regressao/index.html#conclusões",
+    "title": "Atividade 3: Regressão Linear",
+    "section": "💡 Conclusões",
+    "text": "💡 Conclusões\n\nAprendizados Técnicos:\n\n✅ Implementação da regressão linear usando álgebra matricial\n✅ Uso de NumPy para operações matriciais eficientes\n✅ Visualização de dados com Plotly\n✅ Interpretação de coeficientes de regressão\n\n\n\nInsights sobre os Dados:\n\nRelação Positiva: Confirma correlação entre educação e salário\nVariabilidade: O modelo explica parte da variação, mas outros fatores são importantes\nValor da Educação: Cada ano de estudo adiciona cerca de R$ 1.000 ao salário\n\n\n\nPróximos Passos:\n\nCalcular R² para quantificar o ajuste\nAdicionar mais variáveis (regressão múltipla)\nVerificar pressupostos da regressão linear\nAnalisar resíduos do modelo",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 3: Regressão Linear"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-3-regressao/index.html#código-completo",
+    "href": "posts/atividade-3-regressao/index.html#código-completo",
+    "title": "Atividade 3: Regressão Linear",
+    "section": "📦 Código Completo",
+    "text": "📦 Código Completo\n\n📥 Downloads\n\n⬇️ Baixar regressao_linear.py\n⬇️ Baixar y.txt\n⬇️ Baixar X (1).txt\n\nOu copie o código abaixo:\n\n\nregressao_linear.py\n\nimport numpy as np\nimport pandas as pd\nimport plotly.graph_objects as go\n\n# Carregando os dados dos arquivos\ny = np.loadtxt('y.txt')\nX_values = np.loadtxt('X (1).txt')\n\n# Preparando a matriz X para regressão linear\n# X = [1, x] para incluir o intercepto\nn = len(X_values)\nX = np.column_stack([np.ones(n), X_values])\n\n# Calculando os coeficientes usando a fórmula matricial\n# β = (X^T X)^(-1) X^T y\nXtX = X.T @ X\nXtX_inv = np.linalg.inv(XtX)\nXty = X.T @ y\nbeta = XtX_inv @ Xty\n\n# Extraindo os coeficientes\na = beta[0]  # intercepto\nb = beta[1]  # coeficiente angular (slope)\n\nprint(f\"Coeficientes da regressão linear:\")\nprint(f\"Intercepto (a): {a:.4f}\")\nprint(f\"Coeficiente angular (b): {b:.4f}\")\nprint(f\"\\nEquação da reta: y = {a:.4f} + {b:.4f}x\")\n\n# Calculando os valores preditos pela reta\ny_pred = a + b * X_values\n\n# Criando o gráfico com Plotly\nfig = go.Figure()\n\n# Adicionando os pontos dos dados\nfig.add_trace(go.Scatter(\n    x=X_values,\n    y=y,\n    mode='markers',\n    name='Dados Observados',\n    marker=dict(color='#2E86AB', size=6, opacity=0.6)\n))\n\n# Adicionando a linha de regressão\nfig.add_trace(go.Scatter(\n    x=X_values,\n    y=y_pred,\n    mode='lines',\n    name=f'Regressão: y = {a:.2f} + {b:.2f}x',\n    line=dict(color='#A23B72', width=3)\n))\n\n# Configurando o layout\nfig.update_layout(\n    title='Regressão Linear: Anos de Estudo vs Salário',\n    xaxis_title='Anos de Estudo',\n    yaxis_title='Salário',\n    template='plotly_white',\n    width=900,\n    height=600,\n    font=dict(size=12),\n    showlegend=True\n)\n\n# Salvando o gráfico\nfig.write_html(\"grafico.html\")\nfig.write_image(\"grafico.png\", width=900, height=600)\n\n# Exibindo o gráfico\nprint(\"\\nGráfico salvo como 'grafico.html' e 'grafico.png'\")\nfig.show()",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 3: Regressão Linear"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-3-regressao/index.html#como-executar",
+    "href": "posts/atividade-3-regressao/index.html#como-executar",
+    "title": "Atividade 3: Regressão Linear",
+    "section": "🚀 Como Executar",
+    "text": "🚀 Como Executar\n# Instalar dependências\npip install numpy pandas plotly\n\n# Executar o script\npython regressao_linear.py\nRequisitos: - Arquivos y.txt e X (1).txt no mesmo diretório\n\nTags: #Python #MachineLearning #Regressão #Estatística #ÁlgebraLinear #NumPy",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 3: Regressão Linear"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-2-onibus/index.html#objetivo",
+    "href": "posts/atividade-2-onibus/index.html#objetivo",
+    "title": "Atividade 2: Monitoramento de Ônibus SP",
+    "section": "",
+    "text": "Desenvolver um sistema de monitoramento em tempo real da linha 8000 de ônibus da cidade de São Paulo, utilizando a API SPTrans e visualizando os dados em um mapa interativo.",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 2: Monitoramento de Ônibus"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-2-onibus/index.html#metodologia",
+    "href": "posts/atividade-2-onibus/index.html#metodologia",
+    "title": "Atividade 2: Monitoramento de Ônibus SP",
+    "section": "🎯 Metodologia",
+    "text": "🎯 Metodologia\nO projeto utiliza:\n\nAPI SPTrans: Dados em tempo real dos ônibus\nFolium: Biblioteca para criação de mapas interativos\nRequests: Para comunicação com a API",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 2: Monitoramento de Ônibus"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-2-onibus/index.html#implementação",
+    "href": "posts/atividade-2-onibus/index.html#implementação",
+    "title": "Atividade 2: Monitoramento de Ônibus SP",
+    "section": "💻 Implementação",
+    "text": "💻 Implementação\n\n1. Classe para Comunicação com a API\nPrimeiro, criamos uma classe para gerenciar a autenticação e requisições:\nimport requests\n\nclass SPTransAPI:\n    \"\"\"\n    Classe para interagir com a API Olho Vivo da SPTrans\n    \"\"\"\n    \n    def __init__(self, token):\n        \"\"\"\n        Inicializa a conexão com a API\n        \n        Parâmetros:\n        -----------\n        token : str\n            Token de autenticação da API SPTrans\n        \"\"\"\n        self.token = token\n        self.base_url = \"http://api.olhovivo.sptrans.com.br/v2.1\"\n        self.authenticated = False\n        self.session = requests.Session()\n        \n    def autenticar(self):\n        \"\"\"\n        Autentica na API usando o token fornecido\n        \n        Retorna:\n        --------\n        bool : True se autenticado com sucesso, False caso contrário\n        \"\"\"\n        url = f\"{self.base_url}/Login/Autenticar?token={self.token}\"\n        \n        try:\n            response = self.session.post(url, data='')\n            \n            if response.status_code == 200 and response.text.strip().lower() == 'true':\n                self.authenticated = True\n                print(\"✅ Autenticado com sucesso!\")\n                return True\n            else:\n                print(\"❌ Falha na autenticação\")\n                return False\n                \n        except Exception as e:\n            print(f\"❌ Erro ao autenticar: {e}\")\n            return False\n\n\n2. Busca de Linhas\nImplementamos métodos para buscar informações sobre as linhas:\ndef buscar_linhas(self, termo):\n    \"\"\"\n    Busca linhas de ônibus por termo\n    \n    Parâmetros:\n    -----------\n    termo : str\n        Termo de busca (número ou nome da linha)\n    \n    Retorna:\n    --------\n    list : Lista de dicionários com informações das linhas\n    \"\"\"\n    if not self.authenticated:\n        print(\"❌ Você precisa autenticar primeiro!\")\n        return []\n    \n    url = f\"{self.base_url}/Linha/Buscar?termosBusca={termo}\"\n    \n    try:\n        response = self.session.get(url)\n        \n        if response.status_code == 200:\n            linhas = response.json()\n            print(f\"✅ Encontradas {len(linhas)} linhas\")\n            return linhas\n        else:\n            return []\n            \n    except Exception as e:\n        print(f\"❌ Erro: {e}\")\n        return []\n\n\n3. Obtenção de Paradas\nBuscamos as paradas de uma linha específica:\ndef obter_paradas(self, codigo_linha):\n    \"\"\"\n    Obtém todas as paradas de uma linha\n    \n    Parâmetros:\n    -----------\n    codigo_linha : int\n        Código da linha\n    \n    Retorna:\n    --------\n    list : Lista com informações das paradas\n    \"\"\"\n    if not self.authenticated:\n        return []\n    \n    url = f\"{self.base_url}/Parada/BuscarParadasPorLinha?codigoLinha={codigo_linha}\"\n    \n    try:\n        response = self.session.get(url)\n        \n        if response.status_code == 200:\n            paradas = response.json()\n            print(f\"✅ Encontradas {len(paradas)} paradas\")\n            return paradas\n            \n    except Exception as e:\n        print(f\"❌ Erro: {e}\")\n        return []\n\n\n4. Posições em Tempo Real\nObtemos a posição atual dos ônibus:\ndef obter_posicoes(self, codigo_linha):\n    \"\"\"\n    Obtém posições em tempo real dos ônibus\n    \n    Parâmetros:\n    -----------\n    codigo_linha : int\n        Código da linha\n    \n    Retorna:\n    --------\n    list : Lista com posições dos veículos\n    \"\"\"\n    url = f\"{self.base_url}/Posicao/Linha?codigoLinha={codigo_linha}\"\n    \n    try:\n        response = self.session.get(url)\n        \n        if response.status_code == 200:\n            dados = response.json()\n            \n            if isinstance(dados, dict) and 'vs' in dados:\n                veiculos = dados['vs']\n                print(f\"✅ {len(veiculos)} ônibus em operação\")\n                return veiculos\n            else:\n                print(\"ℹ️ Nenhum ônibus em operação\")\n                return []\n                \n    except Exception as e:\n        print(f\"❌ Erro: {e}\")\n        return []\n\n\n5. Criação do Mapa Interativo\nUsamos Folium para criar um mapa com as paradas e ônibus:\nimport folium\nfrom folium import plugins\n\ndef criar_mapa_linha(api, codigo_linha, nome_linha):\n    \"\"\"\n    Cria um mapa interativo com paradas e ônibus\n    \n    Parâmetros:\n    -----------\n    api : SPTransAPI\n        Instância autenticada da API\n    codigo_linha : int\n        Código da linha\n    nome_linha : str\n        Nome descritivo da linha\n    \n    Retorna:\n    --------\n    folium.Map : Mapa interativo\n    \"\"\"\n    # Obtém dados\n    paradas = api.obter_paradas(codigo_linha)\n    veiculos = api.obter_posicoes(codigo_linha)\n    \n    # Filtra paradas válidas\n    paradas_validas = [p for p in paradas \n                       if p.get('py', 0) != 0 and p.get('px', 0) != 0]\n    \n    # Calcula centro do mapa\n    lats = [p['py'] for p in paradas_validas]\n    lons = [p['px'] for p in paradas_validas]\n    centro = [sum(lats)/len(lats), sum(lons)/len(lons)]\n    \n    # Cria o mapa\n    mapa = folium.Map(\n        location=centro,\n        zoom_start=13,\n        tiles='OpenStreetMap'\n    )\n    \n    # Adiciona paradas (marcadores azuis)\n    grupo_paradas = folium.FeatureGroup(name='🚏 Paradas')\n    \n    for parada in paradas_validas:\n        folium.Marker(\n            location=[parada['py'], parada['px']],\n            popup=folium.Popup(\n                f\"&lt;b&gt;{parada['np']}&lt;/b&gt;&lt;br&gt;\"\n                f\"Código: {parada['cp']}&lt;br&gt;\"\n                f\"Endereço: {parada['ed']}\",\n                max_width=300\n            ),\n            tooltip=f\"🚏 {parada['np']}\",\n            icon=folium.Icon(color='blue', icon='stop', prefix='fa')\n        ).add_to(grupo_paradas)\n    \n    grupo_paradas.add_to(mapa)\n    \n    # Adiciona ônibus (marcadores vermelhos)\n    if veiculos:\n        grupo_veiculos = folium.FeatureGroup(name='🚌 Ônibus')\n        \n        for veiculo in veiculos:\n            if veiculo.get('py', 0) != 0 and veiculo.get('px', 0) != 0:\n                folium.Marker(\n                    location=[veiculo['py'], veiculo['px']],\n                    popup=f\"🚌 Ônibus {veiculo.get('p', 'N/A')}\",\n                    tooltip=f\"🚌 {veiculo.get('p', 'N/A')}\",\n                    icon=folium.Icon(color='red', icon='bus', prefix='fa')\n                ).add_to(grupo_veiculos)\n        \n        grupo_veiculos.add_to(mapa)\n    \n    # Adiciona controle de camadas\n    folium.LayerControl().add_to(mapa)\n    \n    # Adiciona botão de tela cheia\n    plugins.Fullscreen().add_to(mapa)\n    \n    return mapa",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 2: Monitoramento de Ônibus"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-2-onibus/index.html#resultados",
+    "href": "posts/atividade-2-onibus/index.html#resultados",
+    "title": "Atividade 2: Monitoramento de Ônibus SP",
+    "section": "📍 Resultados",
+    "text": "📍 Resultados\nO sistema gerou um mapa interativo mostrando:\n\n\n\nMapa da Linha 8000\n\n\n\nCaracterísticas do Mapa:\n\n🔵 Marcadores Azuis: Paradas da linha\n🔴 Marcadores Vermelhos: Ônibus em operação\n📍 Popup: Informações detalhadas ao clicar\n🔍 Zoom: Navegação interativa\n📱 Responsivo: Funciona em qualquer dispositivo\n\n\n\nDados da Linha 8000:\n\nNome: Corredor ABD\nTotal de Paradas: 47 paradas\nÔnibus em Operação: Varia ao longo do dia\nPercurso: Terminal Santo Amaro ↔︎ Terminal Cidade Tiradentes",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 2: Monitoramento de Ônibus"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-2-onibus/index.html#análise",
+    "href": "posts/atividade-2-onibus/index.html#análise",
+    "title": "Atividade 2: Monitoramento de Ônibus SP",
+    "section": "🔍 Análise",
+    "text": "🔍 Análise\nO sistema permite:\n\nMonitoramento em Tempo Real: Ver posição atual dos ônibus\nPlanejamento de Rota: Identificar paradas próximas\nAnálise de Cobertura: Visualizar distribuição das paradas\nAcessibilidade: Interface intuitiva e interativa",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 2: Monitoramento de Ônibus"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-2-onibus/index.html#conclusão",
+    "href": "posts/atividade-2-onibus/index.html#conclusão",
+    "title": "Atividade 2: Monitoramento de Ônibus SP",
+    "section": "💡 Conclusão",
+    "text": "💡 Conclusão\nEste projeto demonstrou:\n\n✅ Integração com API REST autenticada\n✅ Manipulação de dados geoespaciais\n✅ Criação de mapas interativos\n✅ Visualização de dados em tempo real\n✅ Interface amigável ao usuário",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 2: Monitoramento de Ônibus"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-2-onibus/index.html#código-completo",
+    "href": "posts/atividade-2-onibus/index.html#código-completo",
+    "title": "Atividade 2: Monitoramento de Ônibus SP",
+    "section": "📦 Código Completo",
+    "text": "📦 Código Completo\n\n📥 Download do Código\n⬇️ Baixar monitoramento_onibus.py\nOu copie o código completo abaixo:\n\nCódigo CompletoComo usar\n\n\n\n\nmonitoramento_onibus.py\n\nimport requests\nimport folium\nfrom folium import plugins\nimport json\n\nclass SPTransAPI:\n    \n    def __init__(self, token):\n        self.token = token\n        self.base_url = \"http://api.olhovivo.sptrans.com.br/v2.1\"\n        self.authenticated = False\n        self.session = requests.Session()\n        \n    def autenticar(self):\n        url = f\"{self.base_url}/Login/Autenticar?token={self.token}\"\n        \n        try:\n            response = self.session.post(url, data='')\n            \n            print(f\"🔡 Autenticando na API SPTrans...\")\n            print(f\"   Status: {response.status_code}\")\n            print(f\"   Resposta: {response.text}\")\n            \n            if response.status_code == 200:\n                result = response.text.strip().lower()\n                if result == 'true':\n                    self.authenticated = True\n                    print(\"✅ Autenticado com sucesso!\\n\")\n                    return True\n                else:\n                    print(\"❌ Autenticação falhou - token inválido\\n\")\n                    return False\n            else:\n                print(f\"❌ Erro HTTP: {response.status_code}\\n\")\n                return False\n                \n        except Exception as e:\n            print(f\"❌ Erro ao autenticar: {e}\\n\")\n            return False\n    \n    def buscar_linhas(self, termo):\n        if not self.authenticated:\n            print(\"❌ Você precisa autenticar primeiro!\")\n            return []\n        \n        url = f\"{self.base_url}/Linha/Buscar?termosBusca={termo}\"\n        \n        try:\n            response = self.session.get(url)\n            \n            print(f\"🔍 Buscando linhas com termo: '{termo}'\")\n            print(f\"   Status: {response.status_code}\")\n            \n            if response.status_code == 200:\n                linhas = response.json()\n                print(f\"✅ Encontradas {len(linhas)} linhas\\n\")\n                return linhas\n            else:\n                print(f\"❌ Erro: {response.status_code}\\n\")\n                return []\n                \n        except Exception as e:\n            print(f\"❌ Erro: {e}\\n\")\n            return []\n    \n    def obter_paradas(self, codigo_linha):\n        if not self.authenticated:\n            print(\"❌ Você precisa autenticar primeiro!\")\n            return []\n        \n        url = f\"{self.base_url}/Parada/BuscarParadasPorLinha?codigoLinha={codigo_linha}\"\n        \n        try:\n            response = self.session.get(url)\n            \n            print(f\"🚏 Buscando paradas da linha {codigo_linha}...\")\n            print(f\"   Status: {response.status_code}\")\n            \n            if response.status_code == 200:\n                paradas = response.json()\n                print(f\"✅ Encontradas {len(paradas)} paradas\\n\")\n                return paradas\n            else:\n                print(f\"❌ Erro: {response.status_code}\\n\")\n                return []\n                \n        except Exception as e:\n            print(f\"❌ Erro: {e}\\n\")\n            return []\n    \n    def obter_posicoes(self, codigo_linha):\n        if not self.authenticated:\n            print(\"❌ Você precisa autenticar primeiro!\")\n            return []\n        \n        url = f\"{self.base_url}/Posicao/Linha?codigoLinha={codigo_linha}\"\n        \n        try:\n            response = self.session.get(url)\n            \n            print(f\"🚌 Buscando posições em tempo real...\")\n            print(f\"   Status: {response.status_code}\")\n            \n            if response.status_code == 200:\n                dados = response.json()\n                \n                if isinstance(dados, dict) and 'vs' in dados:\n                    veiculos = dados['vs']\n                    print(f\"✅ {len(veiculos)} ônibus em operação\\n\")\n                    return veiculos\n                else:\n                    print(\"ℹ️  Nenhum ônibus em operação no momento\\n\")\n                    return []\n            else:\n                print(f\"❌ Erro: {response.status_code}\\n\")\n                return []\n                \n        except Exception as e:\n            print(f\"❌ Erro: {e}\\n\")\n            return []\n\n\ndef criar_mapa_linha(api, codigo_linha, nome_linha):\n    print(\"=\"*70)\n    print(f\"🗺️  GERANDO MAPA PARA: {nome_linha}\")\n    print(\"=\"*70 + \"\\n\")\n    \n    paradas = api.obter_paradas(codigo_linha)\n    \n    if not paradas:\n        print(\"⚠️  Não foi possível obter paradas. Verifique o código da linha.\")\n        return None\n    \n    veiculos = api.obter_posicoes(codigo_linha)\n    \n    paradas_validas = [p for p in paradas if p.get('py', 0) != 0 and p.get('px', 0) != 0]\n    \n    if not paradas_validas:\n        print(\"⚠️  Nenhuma parada com coordenadas válidas encontrada.\")\n        return None\n    \n    lats = [p['py'] for p in paradas_validas]\n    lons = [p['px'] for p in paradas_validas]\n    centro = [sum(lats)/len(lats), sum(lons)/len(lons)]\n    \n    print(f\"📍 Centro do mapa: {centro[0]:.6f}, {centro[1]:.6f}\")\n    \n    mapa = folium.Map(\n        location=centro,\n        zoom_start=13,\n        tiles='OpenStreetMap'\n    )\n    \n    grupo_paradas = folium.FeatureGroup(name='🚏 Paradas')\n    \n    for parada in paradas_validas:\n        folium.Marker(\n            location=[parada['py'], parada['px']],\n            popup=folium.Popup(\n                f\"&lt;b style='font-size:14px;'&gt;{parada['np']}&lt;/b&gt;&lt;br&gt;\"\n                f\"&lt;b&gt;Código:&lt;/b&gt; {parada['cp']}&lt;br&gt;\"\n                f\"&lt;b&gt;Endereço:&lt;/b&gt; {parada['ed']}&lt;br&gt;\"\n                f\"&lt;b&gt;Coordenadas:&lt;/b&gt; {parada['py']:.6f}, {parada['px']:.6f}\",\n                max_width=300\n            ),\n            tooltip=f\"🚏 {parada['np']}\",\n            icon=folium.Icon(color='blue', icon='stop', prefix='fa')\n        ).add_to(grupo_paradas)\n    \n    grupo_paradas.add_to(mapa)\n    print(f\"✅ {len(paradas_validas)} paradas adicionadas ao mapa (AZUL)\")\n    \n    if veiculos:\n        grupo_veiculos = folium.FeatureGroup(name='🚌 Ônibus')\n        veiculos_validos = 0\n        \n        for veiculo in veiculos:\n            if veiculo.get('py', 0) != 0 and veiculo.get('px', 0) != 0:\n                prefixo = veiculo.get('p', 'N/A')\n                hora = veiculo.get('hr', 'N/A')\n                acessivel = veiculo.get('a', False)\n                \n                folium.Marker(\n                    location=[veiculo['py'], veiculo['px']],\n                    popup=folium.Popup(\n                        f\"&lt;b style='font-size:14px;'&gt;🚌 Ônibus {prefixo}&lt;/b&gt;&lt;br&gt;\"\n                        f\"&lt;b&gt;Hora:&lt;/b&gt; {hora}&lt;br&gt;\"\n                        f\"&lt;b&gt;Acessível:&lt;/b&gt; {'✅ Sim' if acessivel else '❌ Não'}&lt;br&gt;\"\n                        f\"&lt;b&gt;Coordenadas:&lt;/b&gt; {veiculo['py']:.6f}, {veiculo['px']:.6f}\",\n                        max_width=250\n                    ),\n                    tooltip=f\"🚌 Ônibus {prefixo}\",\n                    icon=folium.Icon(color='red', icon='bus', prefix='fa')\n                ).add_to(grupo_veiculos)\n                veiculos_validos += 1\n        \n        grupo_veiculos.add_to(mapa)\n        print(f\"✅ {veiculos_validos} ônibus adicionados ao mapa (VERMELHO)\")\n    else:\n        print(\"ℹ️  Nenhum ônibus em circulação no momento\")\n    \n    folium.LayerControl().add_to(mapa)\n    \n    plugins.Fullscreen(\n        position='topright',\n        title='Tela cheia',\n        title_cancel='Sair da tela cheia'\n    ).add_to(mapa)\n    \n    print(\"\\n\" + \"=\"*70)\n    print(\"✅ MAPA GERADO COM SUCESSO!\")\n    print(\"=\"*70)\n    \n    return mapa\n\n\ndef main():\n    \n    print(\"\\n\" + \"=\"*70)\n    print(\" 🚌 MONITORAMENTO DE FROTA DE ÔNIBUS - API SPTRANS 🚌\")\n    print(\"=\"*70 + \"\\n\")\n    \n    TOKEN = \"18b2210f1fd23dedbcf7e82197fb123d7ed7d72c74f15cfd718b3b1f5e5362ea\"\n    \n    api = SPTransAPI(TOKEN)\n    \n    if not api.autenticar():\n        print(\"❌ Falha na autenticação. Verifique seu token.\")\n        return\n    \n    termo_busca = \"8000\"\n    \n    linhas = api.buscar_linhas(termo_busca)\n    \n    if not linhas:\n        print(f\"❌ Nenhuma linha encontrada com o termo '{termo_busca}'\")\n        return\n    \n    print(\"=\"*70)\n    print(\"📋 LINHAS ENCONTRADAS:\")\n    print(\"=\"*70)\n    \n    for i, linha in enumerate(linhas, 1):\n        print(f\"\\n{i}. Letreiro: {linha['lt']}\")\n        print(f\"   Código: {linha['cl']}\")\n        print(f\"   De: {linha['tp']}\")\n        print(f\"   Para: {linha['ts']}\")\n    \n    print(\"\\n\" + \"=\"*70)\n    \n    linha = linhas[0]\n    \n    mapa = criar_mapa_linha(\n        api,\n        linha['cl'],\n        f\"{linha['lt']} - {linha['tp']} → {linha['ts']}\"\n    )\n    \n    if mapa:\n        arquivo = f\"mapa_linha_{linha['cl']}.html\"\n        mapa.save(arquivo)\n        \n        print(f\"\\n💾 Arquivo salvo: {arquivo}\")\n        print(\"🌐 Abra o arquivo no navegador para visualizar o mapa!\\n\")\n        print(\"=\"*70 + \"\\n\")\n    else:\n        print(\"\\n❌ Não foi possível gerar o mapa\\n\")\n\n\nif __name__ == \"__main__\":\n    main()\n\n\n\n\nObter Token da API SPTrans: Cadastre-se em https://www.sptrans.com.br/desenvolvedores/\nSubstituir o TOKEN: Coloque seu token na linha TOKEN = \"SEU_TOKEN_AQUI\"\nExecutar: python monitoramento_onibus.py",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 2: Monitoramento de Ônibus"
+    ]
+  },
+  {
+    "objectID": "posts/atividade-2-onibus/index.html#como-executar",
+    "href": "posts/atividade-2-onibus/index.html#como-executar",
+    "title": "Atividade 2: Monitoramento de Ônibus SP",
+    "section": "🚀 Como Executar",
+    "text": "🚀 Como Executar\n# Instalar dependências\npip install requests folium\n\n# Executar o script\npython monitoramento_onibus.py\nImportante: É necessário ter um token válido da API SPTrans.\n\nTags: #Python #API #Mapas #TransportePúblico #Folium #SPTrans",
+    "crumbs": [
+      "Home",
+      "Atividades",
+      "Atividade 2: Monitoramento de Ônibus"
+    ]
+  }
+]

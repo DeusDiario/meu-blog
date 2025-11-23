@@ -1,0 +1,48 @@
+---
+title: "Bem-vindo ao Meu Blog"
+subtitle: "Análise de Dados e Programação em Python"
+---
+
+## 👋 Sobre este Blog
+
+Este blog foi criado como parte do trabalho individual da disciplina de **Construir Algoritmos**, apresentando três atividades práticas de análise de dados utilizando Python.
+
+## 📚 Atividades
+
+### [Atividade 1: Cotação do Dólar](posts/atividade-1-dolar/index.qmd)
+Acompanhamento e visualização da cotação do dólar no mês de agosto de 2021, utilizando a API do Banco Central do Brasil.
+
+**Tecnologias:** Python, Requests, Pandas, Plotly
+
+---
+
+### [Atividade 2: Monitoramento de Ônibus](posts/atividade-2-onibus/index.qmd)
+Sistema de monitoramento em tempo real da linha 8000 de ônibus na cidade de São Paulo, com visualização em mapa interativo.
+
+**Tecnologias:** Python, API SPTrans, Folium, Requests
+
+---
+
+### [Atividade 3: Regressão Linear](posts/atividade-3-regressao/index.qmd)
+Implementação de regressão linear para análise da relação entre anos de estudo e salário, utilizando fórmulas matriciais.
+
+**Tecnologias:** Python, NumPy, Plotly, Álgebra Linear
+
+---
+
+## 🛠️ Ferramentas Utilizadas
+
+- **Python 3.x**
+- **Bibliotecas:** NumPy, Pandas, Plotly, Folium, Requests
+- **Quarto** para geração do blog
+- **GitHub Pages** para hospedagem
+
+---
+
+## 📧 Contato
+
+Para mais informações ou dúvidas sobre as atividades, entre em contato através do GitHub.
+
+---
+
+*Blog criado com [Quarto](https://quarto.org/)*

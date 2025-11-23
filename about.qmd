@@ -1,0 +1,49 @@
+---
+title: "Sobre Mim"
+image: profile.jpg
+about:
+  template: jolla
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/DeusDiario 
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com/in/DeusDiario
+---
+
+## Olá! 👋
+
+Meu nome é **[Lucas]** e sou estudante de **[Sistema da Informação]**.
+
+Este blog foi desenvolvido como parte do trabalho individual da disciplina de **Construir Algoritmos**, onde exploramos conceitos de programação, análise de dados e visualização utilizando Python.
+
+## 🎓 Formação
+
+- **Curso:** Sistema da informação
+- **Instituição:** Unasp
+- **Período:** 2025
+
+## 💻 Habilidades
+
+- Python
+- Análise de Dados
+- Visualização de Dados
+- APIs REST
+- Git/GitHub
+
+## 📂 Projetos
+
+Neste blog, você encontrará três projetos principais:
+
+1. **Cotação do Dólar:** Análise temporal da cotação do dólar
+2. **Monitoramento de Ônibus:** Sistema de rastreamento em tempo real
+3. **Regressão Linear:** Análise estatística de dados
+
+## 🎯 Objetivo
+
+O objetivo deste trabalho é demonstrar a aplicação prática de conceitos de programação e análise de dados em problemas reais, utilizando ferramentas modernas e boas práticas de desenvolvimento.
+
+---
+
+*Última atualização: Novembro de 2024*

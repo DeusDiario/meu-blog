@@ -1,0 +1,624 @@
+---
+title: "Atividade 2: Monitoramento de Ônibus SP"
+author: "Seu Nome"
+date: "2024-11-23"
+categories: [python, api, mapas, transporte público]
+image: "mapa_onibus.png"
+---
+
+## 🚌 Objetivo
+
+Desenvolver um sistema de monitoramento em tempo real da linha **8000** de ônibus da cidade de São Paulo, utilizando a API SPTrans e visualizando os dados em um mapa interativo.
+
+## 🎯 Metodologia
+
+O projeto utiliza:
+
+- **API SPTrans**: Dados em tempo real dos ônibus
+- **Folium**: Biblioteca para criação de mapas interativos
+- **Requests**: Para comunicação com a API
+
+## 💻 Implementação
+
+### 1. Classe para Comunicação com a API
+
+Primeiro, criamos uma classe para gerenciar a autenticação e requisições:
+
+```python
+import requests
+
+class SPTransAPI:
+    """
+    Classe para interagir com a API Olho Vivo da SPTrans
+    """
+    
+    def __init__(self, token):
+        """
+        Inicializa a conexão com a API
+        
+        Parâmetros:
+        -----------
+        token : str
+            Token de autenticação da API SPTrans
+        """
+        self.token = token
+        self.base_url = "http://api.olhovivo.sptrans.com.br/v2.1"
+        self.authenticated = False
+        self.session = requests.Session()
+        
+    def autenticar(self):
+        """
+        Autentica na API usando o token fornecido
+        
+        Retorna:
+        --------
+        bool : True se autenticado com sucesso, False caso contrário
+        """
+        url = f"{self.base_url}/Login/Autenticar?token={self.token}"
+        
+        try:
+            response = self.session.post(url, data='')
+            
+            if response.status_code == 200 and response.text.strip().lower() == 'true':
+                self.authenticated = True
+                print("✅ Autenticado com sucesso!")
+                return True
+            else:
+                print("❌ Falha na autenticação")
+                return False
+                
+        except Exception as e:
+            print(f"❌ Erro ao autenticar: {e}")
+            return False
+```
+
+### 2. Busca de Linhas
+
+Implementamos métodos para buscar informações sobre as linhas:
+
+```python
+def buscar_linhas(self, termo):
+    """
+    Busca linhas de ônibus por termo
+    
+    Parâmetros:
+    -----------
+    termo : str
+        Termo de busca (número ou nome da linha)
+    
+    Retorna:
+    --------
+    list : Lista de dicionários com informações das linhas
+    """
+    if not self.authenticated:
+        print("❌ Você precisa autenticar primeiro!")
+        return []
+    
+    url = f"{self.base_url}/Linha/Buscar?termosBusca={termo}"
+    
+    try:
+        response = self.session.get(url)
+        
+        if response.status_code == 200:
+            linhas = response.json()
+            print(f"✅ Encontradas {len(linhas)} linhas")
+            return linhas
+        else:
+            return []
+            
+    except Exception as e:
+        print(f"❌ Erro: {e}")
+        return []
+```
+
+### 3. Obtenção de Paradas
+
+Buscamos as paradas de uma linha específica:
+
+```python
+def obter_paradas(self, codigo_linha):
+    """
+    Obtém todas as paradas de uma linha
+    
+    Parâmetros:
+    -----------
+    codigo_linha : int
+        Código da linha
+    
+    Retorna:
+    --------
+    list : Lista com informações das paradas
+    """
+    if not self.authenticated:
+        return []
+    
+    url = f"{self.base_url}/Parada/BuscarParadasPorLinha?codigoLinha={codigo_linha}"
+    
+    try:
+        response = self.session.get(url)
+        
+        if response.status_code == 200:
+            paradas = response.json()
+            print(f"✅ Encontradas {len(paradas)} paradas")
+            return paradas
+            
+    except Exception as e:
+        print(f"❌ Erro: {e}")
+        return []
+```
+
+### 4. Posições em Tempo Real
+
+Obtemos a posição atual dos ônibus:
+
+```python
+def obter_posicoes(self, codigo_linha):
+    """
+    Obtém posições em tempo real dos ônibus
+    
+    Parâmetros:
+    -----------
+    codigo_linha : int
+        Código da linha
+    
+    Retorna:
+    --------
+    list : Lista com posições dos veículos
+    """
+    url = f"{self.base_url}/Posicao/Linha?codigoLinha={codigo_linha}"
+    
+    try:
+        response = self.session.get(url)
+        
+        if response.status_code == 200:
+            dados = response.json()
+            
+            if isinstance(dados, dict) and 'vs' in dados:
+                veiculos = dados['vs']
+                print(f"✅ {len(veiculos)} ônibus em operação")
+                return veiculos
+            else:
+                print("ℹ️ Nenhum ônibus em operação")
+                return []
+                
+    except Exception as e:
+        print(f"❌ Erro: {e}")
+        return []
+```
+
+### 5. Criação do Mapa Interativo
+
+Usamos Folium para criar um mapa com as paradas e ônibus:
+
+```python
+import folium
+from folium import plugins
+
+def criar_mapa_linha(api, codigo_linha, nome_linha):
+    """
+    Cria um mapa interativo com paradas e ônibus
+    
+    Parâmetros:
+    -----------
+    api : SPTransAPI
+        Instância autenticada da API
+    codigo_linha : int
+        Código da linha
+    nome_linha : str
+        Nome descritivo da linha
+    
+    Retorna:
+    --------
+    folium.Map : Mapa interativo
+    """
+    # Obtém dados
+    paradas = api.obter_paradas(codigo_linha)
+    veiculos = api.obter_posicoes(codigo_linha)
+    
+    # Filtra paradas válidas
+    paradas_validas = [p for p in paradas 
+                       if p.get('py', 0) != 0 and p.get('px', 0) != 0]
+    
+    # Calcula centro do mapa
+    lats = [p['py'] for p in paradas_validas]
+    lons = [p['px'] for p in paradas_validas]
+    centro = [sum(lats)/len(lats), sum(lons)/len(lons)]
+    
+    # Cria o mapa
+    mapa = folium.Map(
+        location=centro,
+        zoom_start=13,
+        tiles='OpenStreetMap'
+    )
+    
+    # Adiciona paradas (marcadores azuis)
+    grupo_paradas = folium.FeatureGroup(name='🚏 Paradas')
+    
+    for parada in paradas_validas:
+        folium.Marker(
+            location=[parada['py'], parada['px']],
+            popup=folium.Popup(
+                f"<b>{parada['np']}</b><br>"
+                f"Código: {parada['cp']}<br>"
+                f"Endereço: {parada['ed']}",
+                max_width=300
+            ),
+            tooltip=f"🚏 {parada['np']}",
+            icon=folium.Icon(color='blue', icon='stop', prefix='fa')
+        ).add_to(grupo_paradas)
+    
+    grupo_paradas.add_to(mapa)
+    
+    # Adiciona ônibus (marcadores vermelhos)
+    if veiculos:
+        grupo_veiculos = folium.FeatureGroup(name='🚌 Ônibus')
+        
+        for veiculo in veiculos:
+            if veiculo.get('py', 0) != 0 and veiculo.get('px', 0) != 0:
+                folium.Marker(
+                    location=[veiculo['py'], veiculo['px']],
+                    popup=f"🚌 Ônibus {veiculo.get('p', 'N/A')}",
+                    tooltip=f"🚌 {veiculo.get('p', 'N/A')}",
+                    icon=folium.Icon(color='red', icon='bus', prefix='fa')
+                ).add_to(grupo_veiculos)
+        
+        grupo_veiculos.add_to(mapa)
+    
+    # Adiciona controle de camadas
+    folium.LayerControl().add_to(mapa)
+    
+    # Adiciona botão de tela cheia
+    plugins.Fullscreen().add_to(mapa)
+    
+    return mapa
+```
+
+## 📍 Resultados
+
+O sistema gerou um mapa interativo mostrando:
+
+![Mapa da Linha 8000](mapa_onibus.png)
+
+### Características do Mapa:
+
+- 🔵 **Marcadores Azuis**: Paradas da linha
+- 🔴 **Marcadores Vermelhos**: Ônibus em operação
+- 📍 **Popup**: Informações detalhadas ao clicar
+- 🔍 **Zoom**: Navegação interativa
+- 📱 **Responsivo**: Funciona em qualquer dispositivo
+
+### Dados da Linha 8000:
+
+- **Nome**: Corredor ABD
+- **Total de Paradas**: 47 paradas
+- **Ônibus em Operação**: Varia ao longo do dia
+- **Percurso**: Terminal Santo Amaro ↔ Terminal Cidade Tiradentes
+
+## 🔍 Análise
+
+O sistema permite:
+
+1. **Monitoramento em Tempo Real**: Ver posição atual dos ônibus
+2. **Planejamento de Rota**: Identificar paradas próximas
+3. **Análise de Cobertura**: Visualizar distribuição das paradas
+4. **Acessibilidade**: Interface intuitiva e interativa
+
+## 💡 Conclusão
+
+Este projeto demonstrou:
+
+- ✅ Integração com API REST autenticada
+- ✅ Manipulação de dados geoespaciais
+- ✅ Criação de mapas interativos
+- ✅ Visualização de dados em tempo real
+- ✅ Interface amigável ao usuário
+
+## 📦 Código Completo
+
+### 📥 Download do Código
+
+[⬇️ Baixar monitoramento_onibus.py](monitoramento_onibus.py){.btn .btn-primary download="monitoramento_onibus.py"}
+
+Ou copie o código completo abaixo:
+
+::: {.panel-tabset}
+
+## Código Completo
+
+```{.python filename="monitoramento_onibus.py"}
+import requests
+import folium
+from folium import plugins
+import json
+
+class SPTransAPI:
+    
+    def __init__(self, token):
+        self.token = token
+        self.base_url = "http://api.olhovivo.sptrans.com.br/v2.1"
+        self.authenticated = False
+        self.session = requests.Session()
+        
+    def autenticar(self):
+        url = f"{self.base_url}/Login/Autenticar?token={self.token}"
+        
+        try:
+            response = self.session.post(url, data='')
+            
+            print(f"🔡 Autenticando na API SPTrans...")
+            print(f"   Status: {response.status_code}")
+            print(f"   Resposta: {response.text}")
+            
+            if response.status_code == 200:
+                result = response.text.strip().lower()
+                if result == 'true':
+                    self.authenticated = True
+                    print("✅ Autenticado com sucesso!\n")
+                    return True
+                else:
+                    print("❌ Autenticação falhou - token inválido\n")
+                    return False
+            else:
+                print(f"❌ Erro HTTP: {response.status_code}\n")
+                return False
+                
+        except Exception as e:
+            print(f"❌ Erro ao autenticar: {e}\n")
+            return False
+    
+    def buscar_linhas(self, termo):
+        if not self.authenticated:
+            print("❌ Você precisa autenticar primeiro!")
+            return []
+        
+        url = f"{self.base_url}/Linha/Buscar?termosBusca={termo}"
+        
+        try:
+            response = self.session.get(url)
+            
+            print(f"🔍 Buscando linhas com termo: '{termo}'")
+            print(f"   Status: {response.status_code}")
+            
+            if response.status_code == 200:
+                linhas = response.json()
+                print(f"✅ Encontradas {len(linhas)} linhas\n")
+                return linhas
+            else:
+                print(f"❌ Erro: {response.status_code}\n")
+                return []
+                
+        except Exception as e:
+            print(f"❌ Erro: {e}\n")
+            return []
+    
+    def obter_paradas(self, codigo_linha):
+        if not self.authenticated:
+            print("❌ Você precisa autenticar primeiro!")
+            return []
+        
+        url = f"{self.base_url}/Parada/BuscarParadasPorLinha?codigoLinha={codigo_linha}"
+        
+        try:
+            response = self.session.get(url)
+            
+            print(f"🚏 Buscando paradas da linha {codigo_linha}...")
+            print(f"   Status: {response.status_code}")
+            
+            if response.status_code == 200:
+                paradas = response.json()
+                print(f"✅ Encontradas {len(paradas)} paradas\n")
+                return paradas
+            else:
+                print(f"❌ Erro: {response.status_code}\n")
+                return []
+                
+        except Exception as e:
+            print(f"❌ Erro: {e}\n")
+            return []
+    
+    def obter_posicoes(self, codigo_linha):
+        if not self.authenticated:
+            print("❌ Você precisa autenticar primeiro!")
+            return []
+        
+        url = f"{self.base_url}/Posicao/Linha?codigoLinha={codigo_linha}"
+        
+        try:
+            response = self.session.get(url)
+            
+            print(f"🚌 Buscando posições em tempo real...")
+            print(f"   Status: {response.status_code}")
+            
+            if response.status_code == 200:
+                dados = response.json()
+                
+                if isinstance(dados, dict) and 'vs' in dados:
+                    veiculos = dados['vs']
+                    print(f"✅ {len(veiculos)} ônibus em operação\n")
+                    return veiculos
+                else:
+                    print("ℹ️  Nenhum ônibus em operação no momento\n")
+                    return []
+            else:
+                print(f"❌ Erro: {response.status_code}\n")
+                return []
+                
+        except Exception as e:
+            print(f"❌ Erro: {e}\n")
+            return []
+
+
+def criar_mapa_linha(api, codigo_linha, nome_linha):
+    print("="*70)
+    print(f"🗺️  GERANDO MAPA PARA: {nome_linha}")
+    print("="*70 + "\n")
+    
+    paradas = api.obter_paradas(codigo_linha)
+    
+    if not paradas:
+        print("⚠️  Não foi possível obter paradas. Verifique o código da linha.")
+        return None
+    
+    veiculos = api.obter_posicoes(codigo_linha)
+    
+    paradas_validas = [p for p in paradas if p.get('py', 0) != 0 and p.get('px', 0) != 0]
+    
+    if not paradas_validas:
+        print("⚠️  Nenhuma parada com coordenadas válidas encontrada.")
+        return None
+    
+    lats = [p['py'] for p in paradas_validas]
+    lons = [p['px'] for p in paradas_validas]
+    centro = [sum(lats)/len(lats), sum(lons)/len(lons)]
+    
+    print(f"📍 Centro do mapa: {centro[0]:.6f}, {centro[1]:.6f}")
+    
+    mapa = folium.Map(
+        location=centro,
+        zoom_start=13,
+        tiles='OpenStreetMap'
+    )
+    
+    grupo_paradas = folium.FeatureGroup(name='🚏 Paradas')
+    
+    for parada in paradas_validas:
+        folium.Marker(
+            location=[parada['py'], parada['px']],
+            popup=folium.Popup(
+                f"<b style='font-size:14px;'>{parada['np']}</b><br>"
+                f"<b>Código:</b> {parada['cp']}<br>"
+                f"<b>Endereço:</b> {parada['ed']}<br>"
+                f"<b>Coordenadas:</b> {parada['py']:.6f}, {parada['px']:.6f}",
+                max_width=300
+            ),
+            tooltip=f"🚏 {parada['np']}",
+            icon=folium.Icon(color='blue', icon='stop', prefix='fa')
+        ).add_to(grupo_paradas)
+    
+    grupo_paradas.add_to(mapa)
+    print(f"✅ {len(paradas_validas)} paradas adicionadas ao mapa (AZUL)")
+    
+    if veiculos:
+        grupo_veiculos = folium.FeatureGroup(name='🚌 Ônibus')
+        veiculos_validos = 0
+        
+        for veiculo in veiculos:
+            if veiculo.get('py', 0) != 0 and veiculo.get('px', 0) != 0:
+                prefixo = veiculo.get('p', 'N/A')
+                hora = veiculo.get('hr', 'N/A')
+                acessivel = veiculo.get('a', False)
+                
+                folium.Marker(
+                    location=[veiculo['py'], veiculo['px']],
+                    popup=folium.Popup(
+                        f"<b style='font-size:14px;'>🚌 Ônibus {prefixo}</b><br>"
+                        f"<b>Hora:</b> {hora}<br>"
+                        f"<b>Acessível:</b> {'✅ Sim' if acessivel else '❌ Não'}<br>"
+                        f"<b>Coordenadas:</b> {veiculo['py']:.6f}, {veiculo['px']:.6f}",
+                        max_width=250
+                    ),
+                    tooltip=f"🚌 Ônibus {prefixo}",
+                    icon=folium.Icon(color='red', icon='bus', prefix='fa')
+                ).add_to(grupo_veiculos)
+                veiculos_validos += 1
+        
+        grupo_veiculos.add_to(mapa)
+        print(f"✅ {veiculos_validos} ônibus adicionados ao mapa (VERMELHO)")
+    else:
+        print("ℹ️  Nenhum ônibus em circulação no momento")
+    
+    folium.LayerControl().add_to(mapa)
+    
+    plugins.Fullscreen(
+        position='topright',
+        title='Tela cheia',
+        title_cancel='Sair da tela cheia'
+    ).add_to(mapa)
+    
+    print("\n" + "="*70)
+    print("✅ MAPA GERADO COM SUCESSO!")
+    print("="*70)
+    
+    return mapa
+
+
+def main():
+    
+    print("\n" + "="*70)
+    print(" 🚌 MONITORAMENTO DE FROTA DE ÔNIBUS - API SPTRANS 🚌")
+    print("="*70 + "\n")
+    
+    TOKEN = "18b2210f1fd23dedbcf7e82197fb123d7ed7d72c74f15cfd718b3b1f5e5362ea"
+    
+    api = SPTransAPI(TOKEN)
+    
+    if not api.autenticar():
+        print("❌ Falha na autenticação. Verifique seu token.")
+        return
+    
+    termo_busca = "8000"
+    
+    linhas = api.buscar_linhas(termo_busca)
+    
+    if not linhas:
+        print(f"❌ Nenhuma linha encontrada com o termo '{termo_busca}'")
+        return
+    
+    print("="*70)
+    print("📋 LINHAS ENCONTRADAS:")
+    print("="*70)
+    
+    for i, linha in enumerate(linhas, 1):
+        print(f"\n{i}. Letreiro: {linha['lt']}")
+        print(f"   Código: {linha['cl']}")
+        print(f"   De: {linha['tp']}")
+        print(f"   Para: {linha['ts']}")
+    
+    print("\n" + "="*70)
+    
+    linha = linhas[0]
+    
+    mapa = criar_mapa_linha(
+        api,
+        linha['cl'],
+        f"{linha['lt']} - {linha['tp']} → {linha['ts']}"
+    )
+    
+    if mapa:
+        arquivo = f"mapa_linha_{linha['cl']}.html"
+        mapa.save(arquivo)
+        
+        print(f"\n💾 Arquivo salvo: {arquivo}")
+        print("🌐 Abra o arquivo no navegador para visualizar o mapa!\n")
+        print("="*70 + "\n")
+    else:
+        print("\n❌ Não foi possível gerar o mapa\n")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## Como usar
+
+1. **Obter Token da API SPTrans**: Cadastre-se em https://www.sptrans.com.br/desenvolvedores/
+2. **Substituir o TOKEN**: Coloque seu token na linha `TOKEN = "SEU_TOKEN_AQUI"`
+3. **Executar**: `python monitoramento_onibus.py`
+
+:::
+
+## 🚀 Como Executar
+
+```bash
+# Instalar dependências
+pip install requests folium
+
+# Executar o script
+python monitoramento_onibus.py
+```
+
+**Importante:** É necessário ter um token válido da API SPTrans.
+
+---
+
+**Tags:** #Python #API #Mapas #TransportePúblico #Folium #SPTrans

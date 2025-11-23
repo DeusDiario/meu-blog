@@ -1,0 +1,40 @@
+project:
+  type: website
+
+website:
+  title: "Análise de Dados com Python"
+  description: "Blog com atividades de programação e análise de dados"
+  navbar:
+    background: primary
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Sobre"
+        href: about.qmd
+    right:
+      - icon: github
+        href: https://github.com/SEU-USUARIO
+      
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - section: "Atividades"
+        contents:
+          - text: "Atividade 1: Cotação do Dólar"
+            href: posts/atividade-1-dolar/index.qmd
+          - text: "Atividade 2: Monitoramento de Ônibus"
+            href: posts/atividade-2-onibus/index.qmd
+          - text: "Atividade 3: Regressão Linear"
+            href: posts/atividade-3-regressao/index.qmd
+
+format:
+  html:
+    theme: 
+      light: cosmo
+      dark: darkly
+    toc: true
+    toc-depth: 3
+    code-fold: false
+    code-tools: true
+    code-copy: true
