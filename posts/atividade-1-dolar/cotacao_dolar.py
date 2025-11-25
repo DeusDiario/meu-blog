@@ -140,7 +140,7 @@ def plotar_grafico_cotacao(df, periodo):
 
 if __name__ == "__main__":
 
-    periodo = "082021"
+    periodo = "072020"
     
 
     df_cotacoes = obter_cotacao_dolar(periodo)
